@@ -1,0 +1,6 @@
+framework module Pods_SG_Heritage_Explorer {
+  umbrella header "Pods-SG Heritage Explorer-umbrella.h"
+
+  export *
+  module * { export * }
+}

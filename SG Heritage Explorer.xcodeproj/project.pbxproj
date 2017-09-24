@@ -13,6 +13,8 @@
 		251E33F51F77FE4C0011B98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F41F77FE4C0011B98B /* Assets.xcassets */; };
 		251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F61F77FE4C0011B98B /* LaunchScreen.storyboard */; };
 		251E34031F77FE4C0011B98B /* SG_Heritage_ExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34021F77FE4C0011B98B /* SG_Heritage_ExplorerTests.swift */; };
+		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
+		8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,12 @@
 		251E33FE1F77FE4C0011B98B /* SG Heritage ExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SG Heritage ExplorerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E34021F77FE4C0011B98B /* SG_Heritage_ExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SG_Heritage_ExplorerTests.swift; sourceTree = "<group>"; };
 		251E34041F77FE4C0011B98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.release.xcconfig"; sourceTree = "<group>"; };
+		54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SG_Heritage_ExplorerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage ExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		815830FBA09A8E6CC3F2F1A4 /* Pods-SG Heritage Explorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.debug.xcconfig"; sourceTree = "<group>"; };
+		A0AAE9C2C638C0800ED5EF06 /* Pods-SG Heritage ExplorerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage ExplorerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SG_Heritage_Explorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CAB64CD58D2BC029A2FE754 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */,
+				54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		251E33E11F77FE4C0011B98B = {
 			isa = PBXGroup;
 			children = (
 				251E33EC1F77FE4C0011B98B /* SG Heritage Explorer */,
 				251E34011F77FE4C0011B98B /* SG Heritage ExplorerTests */,
 				251E33EB1F77FE4C0011B98B /* Products */,
+				FD98015C30BCB683770DCF58 /* Pods */,
+				1CAB64CD58D2BC029A2FE754 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +117,17 @@
 			path = "SG Heritage ExplorerTests";
 			sourceTree = "<group>";
 		};
+		FD98015C30BCB683770DCF58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				815830FBA09A8E6CC3F2F1A4 /* Pods-SG Heritage Explorer.debug.xcconfig */,
+				43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */,
+				79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */,
+				A0AAE9C2C638C0800ED5EF06 /* Pods-SG Heritage ExplorerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251E34071F77FE4C0011B98B /* Build configuration list for PBXNativeTarget "SG Heritage Explorer" */;
 			buildPhases = (
+				8B8A5159A9804F00A10BB2AD /* [CP] Check Pods Manifest.lock */,
 				251E33E61F77FE4C0011B98B /* Sources */,
 				251E33E71F77FE4C0011B98B /* Frameworks */,
 				251E33E81F77FE4C0011B98B /* Resources */,
+				831D9B341071F85701675F5C /* [CP] Embed Pods Frameworks */,
+				02D07F10AA9786CB50DBC2A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251E340A1F77FE4C0011B98B /* Build configuration list for PBXNativeTarget "SG Heritage ExplorerTests" */;
 			buildPhases = (
+				14893F762F7C0D74091D5A2E /* [CP] Check Pods Manifest.lock */,
 				251E33FA1F77FE4C0011B98B /* Sources */,
 				251E33FB1F77FE4C0011B98B /* Frameworks */,
 				251E33FC1F77FE4C0011B98B /* Resources */,
+				7AB8ED70E3735788B50F5490 /* [CP] Embed Pods Frameworks */,
+				29F97688E64E2F2026B588DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +233,116 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02D07F10AA9786CB50DBC2A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14893F762F7C0D74091D5A2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SG Heritage ExplorerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29F97688E64E2F2026B588DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AB8ED70E3735788B50F5490 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831D9B341071F85701675F5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer-frameworks.sh",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
+				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B8A5159A9804F00A10BB2AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SG Heritage Explorer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		251E33E61F77FE4C0011B98B /* Sources */ = {
@@ -339,6 +487,7 @@
 		};
 		251E34081F77FE4C0011B98B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 815830FBA09A8E6CC3F2F1A4 /* Pods-SG Heritage Explorer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MZ483TW92Y;
@@ -353,6 +502,7 @@
 		};
 		251E34091F77FE4C0011B98B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MZ483TW92Y;
@@ -367,6 +517,7 @@
 		};
 		251E340B1F77FE4C0011B98B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -382,6 +533,7 @@
 		};
 		251E340C1F77FE4C0011B98B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0AAE9C2C638C0800ED5EF06 /* Pods-SG Heritage ExplorerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
