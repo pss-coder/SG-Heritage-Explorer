@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /**
-    In swift, use capital letters for classes and use camelcase for properties
+    In swift, use capital letters for classes and use camelcase (e.g firstName)for properties
  
  */
 
