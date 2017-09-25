@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250E6BE31F78D44A00192ACE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250E6BE21F78D44A00192ACE /* MapKit.framework */; };
+		250E6BE51F78DB4200192ACE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250E6BE41F78DB4200192ACE /* CoreLocation.framework */; };
 		251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33ED1F77FE4C0011B98B /* AppDelegate.swift */; };
 		251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33EF1F77FE4C0011B98B /* ViewController.swift */; };
 		251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F11F77FE4C0011B98B /* Main.storyboard */; };
@@ -16,11 +18,12 @@
 		251E34161F7815110011B98B /* Heritage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34151F7815110011B98B /* Heritage.swift */; };
 		251E34181F7815210011B98B /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34171F7815210011B98B /* Quiz.swift */; };
 		251E341A1F78152B0011B98B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34191F78152B0011B98B /* User.swift */; };
-		251E341C1F7815360011B98B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E341B1F7815360011B98B /* Location.swift */; };
+		251E341C1F7815360011B98B /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E341B1F7815360011B98B /* Locations.swift */; };
 		251E341F1F78154A0011B98B /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E341E1F78154A0011B98B /* Rewards.swift */; };
 		251E34221F781C350011B98B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34211F781C350011B98B /* MapUtilities.swift */; };
 		253268C71F78C8F400F0FBBB /* test.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C51F78C8F400F0FBBB /* test.gpx */; };
 		253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */; };
+		25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C631F7977B4009C254E /* AppUtilities.swift */; };
 		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
 		8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250E6BE21F78D44A00192ACE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		250E6BE41F78DB4200192ACE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		251E33EA1F77FE4C0011B98B /* SG Heritage Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SG Heritage Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E33ED1F77FE4C0011B98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E33EF1F77FE4C0011B98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,11 +54,12 @@
 		251E34151F7815110011B98B /* Heritage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heritage.swift; sourceTree = "<group>"; };
 		251E34171F7815210011B98B /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		251E34191F78152B0011B98B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		251E341B1F7815360011B98B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		251E341B1F7815360011B98B /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		251E341E1F78154A0011B98B /* Rewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
 		251E34211F781C350011B98B /* MapUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		253268C51F78C8F400F0FBBB /* test.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 		253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestLocations 14-01-07-612.gpx"; sourceTree = "<group>"; };
+		25E28C631F7977B4009C254E /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
 		43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.release.xcconfig"; sourceTree = "<group>"; };
 		54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SG_Heritage_ExplorerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage ExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250E6BE51F78DB4200192ACE /* CoreLocation.framework in Frameworks */,
+				250E6BE31F78D44A00192ACE /* MapKit.framework in Frameworks */,
 				45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +93,8 @@
 		1CAB64CD58D2BC029A2FE754 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				250E6BE41F78DB4200192ACE /* CoreLocation.framework */,
+				250E6BE21F78D44A00192ACE /* MapKit.framework */,
 				BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */,
 				54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */,
 			);
@@ -143,7 +153,7 @@
 				251E34191F78152B0011B98B /* User.swift */,
 				251E34151F7815110011B98B /* Heritage.swift */,
 				251E34171F7815210011B98B /* Quiz.swift */,
-				251E341B1F7815360011B98B /* Location.swift */,
+				251E341B1F7815360011B98B /* Locations.swift */,
 				251E341E1F78154A0011B98B /* Rewards.swift */,
 			);
 			name = Model;
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				251E34211F781C350011B98B /* MapUtilities.swift */,
+				25E28C631F7977B4009C254E /* AppUtilities.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -250,6 +261,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MZ483TW92Y;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					251E33FD1F77FE4C0011B98B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -418,11 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */,
+				25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */,
 				251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */,
 				251E34181F7815210011B98B /* Quiz.swift in Sources */,
 				251E341A1F78152B0011B98B /* User.swift in Sources */,
 				251E341F1F78154A0011B98B /* Rewards.swift in Sources */,
-				251E341C1F7815360011B98B /* Location.swift in Sources */,
+				251E341C1F7815360011B98B /* Locations.swift in Sources */,
 				251E34161F7815110011B98B /* Heritage.swift in Sources */,
 				251E34221F781C350011B98B /* MapUtilities.swift in Sources */,
 			);

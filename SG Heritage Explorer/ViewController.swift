@@ -10,9 +10,8 @@ import UIKit
 import Mapbox
 import MapboxDirections
 import SwiftLocation
-import CoreLocation
 
-class ViewController: UIViewController,MGLMapViewDelegate,CLLocationManagerDelegate {
+class ViewController: UIViewController,MGLMapViewDelegate {
 
     
     
@@ -22,18 +21,14 @@ class ViewController: UIViewController,MGLMapViewDelegate,CLLocationManagerDeleg
     private let oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
     @IBOutlet weak var mapView: MGLMapView!
     
-    var locationManager = CLLocationManager();
-
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DisplayOneMapBaseMap();
         mapView.delegate = self;
         
-        setGeoFencingFor()
+        //setGeoFencingFor();
+       
         
     }
 
@@ -64,12 +59,9 @@ class ViewController: UIViewController,MGLMapViewDelegate,CLLocationManagerDeleg
         
         //Show User Current Locations
         mapView.showsUserLocation = true;
-         mapView.setUserTrackingMode(.followWithHeading, animated: false)
-       // mapView.setZoomLevel(20, animated: false);
+       //  mapView.setUserTrackingMode(.followWithHeading, animated: false)
         
         let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
-//       // let currloc = CLLocationCoordinate2DMake(mapView.userLocation?.coordinate.latitude!,
-//                                                 mapView.userLocation?.coordinate.longitude!);
 
        mapView.setCenter(merlionParkLocation,zoomLevel: 12, animated: false);
         
@@ -89,41 +81,14 @@ class ViewController: UIViewController,MGLMapViewDelegate,CLLocationManagerDeleg
         //set up geofencing monitoring for heritage
         let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
-        CreateGeoFence(forRegion: geofenceRegion);
+        MapUtilities.CreateGeoFence(forRegion: geofenceRegion,onView: self);
         
         //display geofencing region (optional to have)
         let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
         self.mapView.addAnnotation(polygon)
     }
     
-     func CreateGeoFence(forRegion:CLCircularRegion)
-    {
-        //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
-        //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
-        // polygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
-        print("geofence start for")
-        
-        do {
-            //let loc = CLLocationCoordinate2DMake( 42.972474, 13.757332)
-            //let radius = 100.0
-            
-            try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
-                print("Entered in region! \(forRegion.identifier) ")
-                //self.showAlert(title: "Entered", message: "Welcome \(geofenceRegion.identifier)")
-                
-            }, exit: { _ in
-                print("Exited from the region \(forRegion.identifier)")
-                // self.showAlert(title: "Exitted", message: "Bye \(geofenceRegion.identifier)")
-                
-            }, error: { req, error in
-                print("An error has occurred \(error)")
-                req.cancel() // abort the request (you can also use `cancelOnError=true` to perform it automatically
-            })
-        } catch {
-            print("Cannot start heading updates: \(error)")
-        }
-        
-    }
+    
     
     
     
@@ -229,6 +194,8 @@ class ViewController: UIViewController,MGLMapViewDelegate,CLLocationManagerDeleg
         return 2.0
     }
     
+    
+     
 
 
 }

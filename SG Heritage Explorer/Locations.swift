@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Location
+public class Locations
 {
 
 }

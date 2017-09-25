@@ -104,7 +104,7 @@ public class MapUtilities{
     }//end route method
     
     
-     static func CreateGeoFence(forRegion:CLCircularRegion)
+    static func CreateGeoFence(forRegion:CLCircularRegion,onView:UIViewController)
     {
         //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
         //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
@@ -117,11 +117,12 @@ public class MapUtilities{
             
             try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
                 print("Entered in region! \(forRegion.identifier) ")
-                //self.showAlert(title: "Entered", message: "Welcome \(geofenceRegion.identifier)")
+                AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
+                
                 
             }, exit: { _ in
                 print("Exited from the region \(forRegion.identifier)")
-               // self.showAlert(title: "Exitted", message: "Bye \(geofenceRegion.identifier)")
+                AppUtilities.showAlert(view:onView,title: "Exitted", message: "Bye \(forRegion.identifier)")
                 
             }, error: { req, error in
                 print("An error has occurred \(error)")

@@ -18,13 +18,13 @@ public class Heritage
 {
     var name,description : String
     var image : UIImage?
-    var location : Location;
+    var location : Locations;
     
     //IF LETS SAY YOUR PROPERTY IS ALLOWED TO HAVE NO VALUE (MAYBE CAUSED NOT USING IT) , USE THE OPTIONAL (?)
     //another thing to also read upon is Failable Initializer
     
     
-    init(name:String,description:String,image:UIImage,location:Location) {
+    init(name:String,description:String,image:UIImage,location:Locations) {
         self.name = name;
         self.description = description;
         self.image = image;
