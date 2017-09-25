@@ -12,7 +12,11 @@ import Mapbox
 class ViewController: UIViewController,MGLMapViewDelegate {
 
     
+    
     //MARK: Properties
+    
+    private let baseMapStyle:[String] = ["Default","Night","Grey","Original"];
+    private var oneMapBaseMapURL = URL(string: "https://maps-json.onemap.sg/Default.json");
     @IBOutlet weak var mapView: MGLMapView!
     
     
@@ -31,9 +35,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     }
     
     //MARK: PRIVATE FUNCTIONS
-//================  PRIVATE FUNCTIONS  ================================
-    
-  
+//========================================  PRIVATE FUNCTIONS  ================================
     
     /**
      Displays OneMap Base Map into Map View.
@@ -43,7 +45,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private func DisplayOneMapBaseMap()
     {
         //using onemap base map
-        let styleURL = URL(string: "https://maps-json.onemap.sg/Default.json");
+        let styleURL = oneMapBaseMapURL;
         mapView.styleURL = styleURL;
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // make the map resizeable
         
@@ -57,13 +59,120 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
     }
     
-    
+    /**
+     Method will Display Heritage Sites onto Map
+     */
     private func LoadHeritage(){}
+    /***/
+    
+    /**
+     Method will Set up geofencing for each Heritage Sites
+     */
+    private func setGeoFencingForHeritage(){}
     
     
     
-    //MARK: MAPBOX DELEGATES
-//================  MAPBOX DELEGATES  ================================
+//===================================  MAPBOX DELEGATES  ================================
+    
+        //MARK: Annotation Callout
+    /** Implement the delegate method that allows annotations to show callouts when tapped.
+     */
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        // Always allow callouts to popup when annotations are tapped.
+        return true
+    }
+    
+    /**
+     Delagate Method to design LEFT side of the callout annotation.
+     */
+    func mapView(_ mapView: MGLMapView, leftCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
+        if (annotation.title! == "Merlion Park") {
+            // Callout height is fixed; width expands to fit its content.
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
+            label.textAlignment = .right
+            label.textColor = UIColor(red: 0.81, green: 0.71, blue: 0.23, alpha: 1)
+            label.text = "Roar"
+            return label
+            
+        }
+        
+        return nil
+    }
+    
+    /**
+     Delagate Method to design RIGHT side of the callout annotation.
+     */
+    func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
+        //PUT THE DIRECTIONS BUTTON HERE
+        return UIButton(type: .detailDisclosure)
+    }
+    
+    //DIRECTIONS  BTN CLICK
+    /**
+     Delagate Method to Handle when RIGHT SIDE CALLOUT IS TAPPED
+     */
+    func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
+        // Hide the callout view.
+        mapView.deselectAnnotation(annotation, animated: false)
+        
+        // Show an alert containing the annotation's details
+        let alert = UIAlertController(title: annotation.title!!, message: "A lovely (if touristy) place.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    /**
+     Delagate method to handle when surrounding callout is tapped.
+     */
+    func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
+//        // Optionally handle taps on the callout.
+//        //WHEN IMAGE OR THE CALLOUT IS TAPPED :
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController;
+//        // print(annotation.title!);
+//        
+//        // newViewController.text = "test 123";
+//        self.present(newViewController, animated: true, completion: nil)
+//        newViewController.labeltest.text = annotation.title!;
+        print("Tapped the callout for: \(annotation)")
+        
+        // Hide the callout.
+        mapView.deselectAnnotation(annotation, animated: true)
+    }
+    
+//  ====================================   ANNOTATION STYLE LOOK ==============================
+    //MARK: Annotation Style
+    func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
+        return 1
+    }
+    //    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+    //        return .white
+    //    }
+    
+    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+        // Give our polyline a unique color by checking for its `title` property
+        if (annotation.title == "Crema to Council Crest" && annotation is MGLPolyline) {
+            // Mapbox cyan
+            return UIColor(red: 59/255, green:178/255, blue:208/255, alpha:1)
+        }
+        else
+        {
+            return .red
+        }
+    }
+    
+    func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor {
+        return UIColor(red: 59/255, green: 178/255, blue: 208/255, alpha: 1)
+    }
+    
+    
+    
+    
+    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
+        // Set the line width for polyline annotations
+        return 2.0
+    }
     
 
 
