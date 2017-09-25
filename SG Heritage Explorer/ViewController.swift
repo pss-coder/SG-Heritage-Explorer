@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import MapboxDirections
 
 class ViewController: UIViewController,MGLMapViewDelegate {
 
@@ -15,8 +16,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     //MARK: Properties
     
-    private let baseMapStyle:[String] = ["Default","Night","Grey","Original"];
-    private var oneMapBaseMapURL = URL(string: "https://maps-json.onemap.sg/Default.json");
+    private let baseMapStyle:[String] = ["Default.json","Night.json","Grey.json","Original.json"];
+    private var oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
     @IBOutlet weak var mapView: MGLMapView!
     
     
@@ -26,6 +27,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         DisplayOneMapBaseMap();
         mapView.delegate = self;
+        
+       // setGeoFencingForHeritage();
         
     }
 
@@ -45,7 +48,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private func DisplayOneMapBaseMap()
     {
         //using onemap base map
-        let styleURL = oneMapBaseMapURL;
+        let styleURL = URL(string:oneMapBaseMapURL);//"\(oneMapBaseMapURL)\(baseMapStyle[0])"
+       // print(oneMapBaseMapURL+baseMapStyle[0]);
         mapView.styleURL = styleURL;
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // make the map resizeable
         
@@ -56,6 +60,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         //Show User Current Locations
         mapView.showsUserLocation = true;
          mapView.setUserTrackingMode(.followWithHeading, animated: false)
+       // mapView.setZoomLevel(20, animated: false);
         
     }
     
@@ -68,7 +73,18 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     /**
      Method will Set up geofencing for each Heritage Sites
      */
-    private func setGeoFencingForHeritage(){}
+    private func setGeoFencingForHeritage()
+    {
+        //set up geofencing monitoring for heritage
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
+        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
+        MapUtilities.CreateGeoFence(forRegion: geofenceRegion);
+        
+        //display geofencing region (optional to have)
+        let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
+        self.mapView.addAnnotation(polygon)
+    }
+    
     
     
     

@@ -8,8 +8,11 @@
 
 import Foundation
 import Mapbox
+import MapboxDirections
+import SwiftLocation;
 
-public class MapUtilties{
+
+public class MapUtilities{
 
 
     /**
@@ -18,7 +21,7 @@ public class MapUtilties{
      
      - Returns: MGLPolygon
      */
-   static func polygonCircleForCoordinate(coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon {
+    static func DrawPolygonCircleForCoordinate(coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon {
         let degreesBetweenPoints = 8.0
         //45 sides
         let numberOfPoints = floor(360.0 / degreesBetweenPoints)
@@ -44,18 +47,90 @@ public class MapUtilties{
         
     }
     
-//    static func showAlert(title:String,message:String)
-//    {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
-//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(action)
-//        present(alert,animated: true,completion: nil); //can only be called in view controller
-//        
-//        
-//        let notification = UILocalNotification()
-//        notification.alertBody = "\(title) \(message)";
-//        notification.soundName = "Default"
-//        UIApplication.shared.presentLocalNotificationNow(notification)
-//    }
+    
+    private static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)
+    {
+        //          let waypoints = [
+        //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.286789, longitude: 103.854501), name: "Merlion Park"),
+        //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965), name: "House"),
+        //            ]
+        let waypoints = [from,to];
+        
+        let options = RouteOptions(waypoints: waypoints, profileIdentifier: .automobileAvoidingTraffic)
+        options.includesSteps = true
+        let directions = Directions.shared;
+        
+        _ = directions.calculate(options) { (waypoints, routes, error) in
+            guard error == nil else {
+                print("Error calculating directions: \(error!)")
+                return
+            }
+            
+            if let route = routes?.first, let leg = route.legs.first {
+                print("Route via \(leg):")
+                
+                let distanceFormatter = LengthFormatter()
+                let formattedDistance = distanceFormatter.string(fromMeters: route.distance)
+                
+                let travelTimeFormatter = DateComponentsFormatter()
+                travelTimeFormatter.unitsStyle = .short
+                let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
+                
+                print("Distance: \(formattedDistance); ETA: \(formattedTravelTime!)")
+                for step in leg.steps {
+                    print("\(step.instructions)")
+                    let formattedDistance = distanceFormatter.string(fromMeters: step.distance)
+                    print("— \(formattedDistance) —")
+                }
+                if route.coordinateCount > 0
+                {
+                    // Convert the route’s coordinates into a polyline.
+                    var routeCoordinates = route.coordinates!
+                    let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                    
+                   // return routeCoordinates;
+                    
+                    // Add the polyline to the map and fit the viewport to the polyline.
+                    mapView.addAnnotation(routeLine)
+                    mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
+                    
+                }
+                //else {return nil;}
+                
+            }
+            
+        }
+        //return nil;
+    }//end route method
+    
+    
+     static func CreateGeoFence(forRegion:CLCircularRegion)
+    {
+        //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
+        //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
+       // polygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
+        
+        
+        do {
+            //let loc = CLLocationCoordinate2DMake( 42.972474, 13.757332)
+            //let radius = 100.0
+            
+            try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
+                print("Entered in region! \(forRegion.identifier) ")
+                //self.showAlert(title: "Entered", message: "Welcome \(geofenceRegion.identifier)")
+                
+            }, exit: { _ in
+                print("Exited from the region \(forRegion.identifier)")
+               // self.showAlert(title: "Exitted", message: "Bye \(geofenceRegion.identifier)")
+                
+            }, error: { req, error in
+                print("An error has occurred \(error)")
+                req.cancel() // abort the request (you can also use `cancelOnError=true` to perform it automatically
+            })
+        } catch {
+            print("Cannot start heading updates: \(error)")
+        }
+        
+    }
 
 }
