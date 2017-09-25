@@ -17,7 +17,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     //MARK: Properties
     
     private let baseMapStyle:[String] = ["Default.json","Night.json","Grey.json","Original.json"];
-    private var oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
+    private let oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
     @IBOutlet weak var mapView: MGLMapView!
     
     
@@ -28,7 +28,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         DisplayOneMapBaseMap();
         mapView.delegate = self;
         
-       // setGeoFencingForHeritage();
+        setGeoFencingFor()
         
     }
 
@@ -48,7 +48,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private func DisplayOneMapBaseMap()
     {
         //using onemap base map
-        let styleURL = URL(string:oneMapBaseMapURL);//"\(oneMapBaseMapURL)\(baseMapStyle[0])"
+        let styleURL = URL(string:"https://maps-json.onemap.sg/Default.json");//"\(oneMapBaseMapURL)\(baseMapStyle[0])"
        // print(oneMapBaseMapURL+baseMapStyle[0]);
         mapView.styleURL = styleURL;
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // make the map resizeable
@@ -62,6 +62,12 @@ class ViewController: UIViewController,MGLMapViewDelegate {
          mapView.setUserTrackingMode(.followWithHeading, animated: false)
        // mapView.setZoomLevel(20, animated: false);
         
+        let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
+//       // let currloc = CLLocationCoordinate2DMake(mapView.userLocation?.coordinate.latitude!,
+//                                                 mapView.userLocation?.coordinate.longitude!);
+
+       mapView.setCenter(merlionParkLocation,zoomLevel: 12, animated: false);
+        
     }
     
     /**
@@ -73,7 +79,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     /**
      Method will Set up geofencing for each Heritage Sites
      */
-    private func setGeoFencingForHeritage()
+    private func setGeoFencingFor()
     {
         //set up geofencing monitoring for heritage
         let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
