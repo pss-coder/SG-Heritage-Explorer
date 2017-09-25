@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1127D72E1F78D12700955D87 /* TaufikTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127D72D1F78D12700955D87 /* TaufikTesting.swift */; };
 		251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33ED1F77FE4C0011B98B /* AppDelegate.swift */; };
 		251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33EF1F77FE4C0011B98B /* ViewController.swift */; };
 		251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F11F77FE4C0011B98B /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1127D72D1F78D12700955D87 /* TaufikTesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaufikTesting.swift; sourceTree = "<group>"; };
 		251E33EA1F77FE4C0011B98B /* SG Heritage Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SG Heritage Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E33ED1F77FE4C0011B98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E33EF1F77FE4C0011B98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		251E33E11F77FE4C0011B98B = {
 			isa = PBXGroup;
 			children = (
-				1127D72D1F78D12700955D87 /* TaufikTesting.swift */,
 				253268C51F78C8F400F0FBBB /* test.gpx */,
 				253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */,
 				251E33EC1F77FE4C0011B98B /* SG Heritage Explorer */,
@@ -379,6 +376,7 @@
 				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
 				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -387,6 +385,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -422,7 +421,6 @@
 				251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */,
 				251E34181F7815210011B98B /* Quiz.swift in Sources */,
 				251E341A1F78152B0011B98B /* User.swift in Sources */,
-				1127D72E1F78D12700955D87 /* TaufikTesting.swift in Sources */,
 				251E341F1F78154A0011B98B /* Rewards.swift in Sources */,
 				251E341C1F7815360011B98B /* Location.swift in Sources */,
 				251E34161F7815110011B98B /* Heritage.swift in Sources */,
