@@ -8,7 +8,8 @@
 
 import Foundation
 
+
 public class Locations
 {
-
+        
 }

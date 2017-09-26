@@ -48,7 +48,7 @@ public class MapUtilities{
     }
     
     
-    private static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)
+     static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)
     {
         //          let waypoints = [
         //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.286789, longitude: 103.854501), name: "Merlion Park"),

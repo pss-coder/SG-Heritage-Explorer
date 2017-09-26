@@ -12,7 +12,6 @@
 		251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33ED1F77FE4C0011B98B /* AppDelegate.swift */; };
 		251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33EF1F77FE4C0011B98B /* ViewController.swift */; };
 		251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F11F77FE4C0011B98B /* Main.storyboard */; };
-		251E33F51F77FE4C0011B98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F41F77FE4C0011B98B /* Assets.xcassets */; };
 		251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F61F77FE4C0011B98B /* LaunchScreen.storyboard */; };
 		251E34031F77FE4C0011B98B /* SG_Heritage_ExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34021F77FE4C0011B98B /* SG_Heritage_ExplorerTests.swift */; };
 		251E34161F7815110011B98B /* Heritage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34151F7815110011B98B /* Heritage.swift */; };
@@ -24,6 +23,8 @@
 		253268C71F78C8F400F0FBBB /* test.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C51F78C8F400F0FBBB /* test.gpx */; };
 		253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */; };
 		25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C631F7977B4009C254E /* AppUtilities.swift */; };
+		25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C691F7A1EA0009C254E /* Assets.xcassets */; };
+		25E28C6E1F7A1EE6009C254E /* turn-right (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C6D1F7A1EE6009C254E /* turn-right (1).png */; };
 		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
 		8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +46,6 @@
 		251E33ED1F77FE4C0011B98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E33EF1F77FE4C0011B98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		251E33F21F77FE4C0011B98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		251E33F41F77FE4C0011B98B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		251E33F71F77FE4C0011B98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		251E33F91F77FE4C0011B98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		251E33FE1F77FE4C0011B98B /* SG Heritage ExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SG Heritage ExplorerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +60,8 @@
 		253268C51F78C8F400F0FBBB /* test.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 		253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestLocations 14-01-07-612.gpx"; sourceTree = "<group>"; };
 		25E28C631F7977B4009C254E /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
+		25E28C691F7A1EA0009C254E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25E28C6D1F7A1EE6009C254E /* turn-right (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "turn-right (1).png"; path = "../../../turn-right (1).png"; sourceTree = "<group>"; };
 		43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.release.xcconfig"; sourceTree = "<group>"; };
 		54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SG_Heritage_ExplorerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage ExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +135,8 @@
 				253268C91F78CC1A00F0FBBB /* DataAccess */,
 				251E33ED1F77FE4C0011B98B /* AppDelegate.swift */,
 				251E33F91F77FE4C0011B98B /* Info.plist */,
-				251E33F41F77FE4C0011B98B /* Assets.xcassets */,
+				25E28C691F7A1EA0009C254E /* Assets.xcassets */,
+				25E28C6D1F7A1EE6009C254E /* turn-right (1).png */,
 			);
 			path = "SG Heritage Explorer";
 			sourceTree = "<group>";
@@ -304,9 +307,10 @@
 			files = (
 				251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */,
 				253268C71F78C8F400F0FBBB /* test.gpx in Resources */,
-				251E33F51F77FE4C0011B98B /* Assets.xcassets in Resources */,
 				251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */,
 				253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */,
+				25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */,
+				25E28C6E1F7A1EE6009C254E /* turn-right (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
