@@ -75,7 +75,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     }
     
     /**
-     Method will Display Heritage Sites onto Map
+     Method will Load Heritage from onemap API
      */
     private func LoadHeritages() -> [Heritage]
     {
@@ -92,7 +92,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         return Heritages;
     }
     
-    /***/
+    /**
+     Method will take in array of heritages and display onto map as Annotations.
+     */
     private func setAnnotationsFor(Heritages:[Heritage])
     {
         // Create four new point annotations with specified coordinates and titles.
