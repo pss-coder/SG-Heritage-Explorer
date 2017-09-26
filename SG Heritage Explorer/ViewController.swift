@@ -10,10 +10,15 @@ import UIKit
 import Mapbox
 import MapboxDirections
 import SwiftLocation
+import UICircularProgressRing
+
 
 class ViewController: UIViewController,MGLMapViewDelegate {
 
     
+    //View
+    @IBOutlet weak var menu: UIView!
+    var menuShowing = false;
     
     //MARK: Properties
     
@@ -295,6 +300,20 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 //    }
     
 
+    
+    // Open/Close Menu Bar
+    @IBAction func menuOpen(_ sender: Any) {
+        
+        menuShowing = !menuShowing
+        
+        if(menuShowing){
+            menu.isHidden = true
+        }
+        else{
+            menu.isHidden = false
+        }
+
+    }
 
 }
 

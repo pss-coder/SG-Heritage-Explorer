@@ -22,10 +22,11 @@
 		251E34221F781C350011B98B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E34211F781C350011B98B /* MapUtilities.swift */; };
 		253268C71F78C8F400F0FBBB /* test.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C51F78C8F400F0FBBB /* test.gpx */; };
 		253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */; };
+		25773DF21F7A4FB7003D7A9F /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */; };
+		25773DF41F7A4FEA003D7A9F /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */; };
 		25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C631F7977B4009C254E /* AppUtilities.swift */; };
 		25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C691F7A1EA0009C254E /* Assets.xcassets */; };
 		25E28C701F7A2249009C254E /* turn-right (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C6F1F7A2249009C254E /* turn-right (1).png */; };
-		25E28C721F7A2320009C254E /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C711F7A2320009C254E /* PopUpViewController.swift */; };
 		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
 		8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,10 +61,11 @@
 		251E34211F781C350011B98B /* MapUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		253268C51F78C8F400F0FBBB /* test.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 		253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestLocations 14-01-07-612.gpx"; sourceTree = "<group>"; };
+		25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		25E28C631F7977B4009C254E /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
 		25E28C691F7A1EA0009C254E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E28C6F1F7A2249009C254E /* turn-right (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turn-right (1).png"; sourceTree = "<group>"; };
-		25E28C711F7A2320009C254E /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.release.xcconfig"; sourceTree = "<group>"; };
 		54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SG_Heritage_ExplorerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FF7AA4F6F27967FF31F508 /* Pods-SG Heritage ExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage ExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage ExplorerTests/Pods-SG Heritage ExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,8 +174,9 @@
 		251E34141F7814C30011B98B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */,
+				25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */,
 				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
-				25E28C711F7A2320009C254E /* PopUpViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -445,9 +448,10 @@
 				251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */,
 				25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */,
 				251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */,
+				25773DF41F7A4FEA003D7A9F /* PopUpViewController.swift in Sources */,
 				251E34181F7815210011B98B /* Quiz.swift in Sources */,
 				251E341A1F78152B0011B98B /* User.swift in Sources */,
-				25E28C721F7A2320009C254E /* PopUpViewController.swift in Sources */,
+				25773DF21F7A4FB7003D7A9F /* RewardsViewController.swift in Sources */,
 				251E341F1F78154A0011B98B /* Rewards.swift in Sources */,
 				251E341C1F7815360011B98B /* Location.swift in Sources */,
 				251E34161F7815110011B98B /* Heritage.swift in Sources */,
