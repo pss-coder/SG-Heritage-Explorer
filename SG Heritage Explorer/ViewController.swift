@@ -234,7 +234,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         print("Tapped the callout for: \(annotation)")
         
         // Hide the callout.
-        mapView.deselectAnnotation(annotation, animated: true)
+     //   mapView.deselectAnnotation(annotation, animated: true)
     }
     
 //  ====================================   ANNOTATION STYLE LOOK ==============================
@@ -244,7 +244,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
-        return 1
+        return 0.5
     }
     //    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
     //        return .white
