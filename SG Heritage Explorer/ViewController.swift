@@ -28,7 +28,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.delegate = self;
         
         //setGeoFencingFor();
-       
+        
+        LocationData.fetchPlaces(locationplace: "merlionpark")
         
     }
 

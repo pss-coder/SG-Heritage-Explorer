@@ -7,15 +7,24 @@
 //
 
 import Foundation
+import UIKit;
 
-var places: [Place]? = []
 
-func fetchPlaces(){
+public class LocationData {
     
-    let url = URL(string: "https://developers.onemap.sg/commonapi/search?searchVal=merlionpark&returnGeom=Y&getAddrDetails=Y".addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!   //To pull data from web
+    
+    
+
+    static func fetchPlaces( locationplace: String) {
+    
+   var places: [Place]? = []
+    
+    
+    let url = URL(string: "https://developers.onemap.sg/commonapi/search?searchVal=\(locationplace)&returnGeom=Y&getAddrDetails=Y".addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!   //To pull data from web
     
     let task = URLSession.shared.dataTask(with: url) { (data,
         response, error) in
+        
         
         
         if error != nil {
@@ -27,21 +36,27 @@ func fetchPlaces(){
         
         //codes to get specific value from the JSON
         do {
+            
             let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
             
             if let articlesFromJson = json["results"] as? [[String : AnyObject]] {
+                
                 for articleFromJson in articlesFromJson {
                     let place = Place() // intance the class
-                    if let places = articleFromJson["SEARCHVAL"] as? String, let lat = articleFromJson["LATITUDE"] as? String, let long = articleFromJson["LONGTITUDE"] as? String{
+                    if let locationPlace = articleFromJson["SEARCHVAL"] as? String, let lat = articleFromJson["LATITUDE"] as? String, let long = articleFromJson["LONGTITUDE"] as? String{
                         
-                        place.place = places    // same name as the name in the class
+                        place.place = locationPlace    // same name as the name in the class
                         place.lat = lat
                         place.long = long
+                       
+                       places?.append(place)  //pushing all the specific value from the JSON to an array
+                        
+                      
                     }
-                    places?.append(place)  //pushing all the specific value from the JSON to an array
-                    print(places)
+                    
                 }
             }
+           
 //            DispatchQueue.main.async {
 //                self.tableview.reloadData()
 //            }
@@ -55,4 +70,7 @@ func fetchPlaces(){
     
     task.resume()
     
+    
+    
+}
 }
