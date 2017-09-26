@@ -36,5 +36,56 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="KnR-el-w61">
+            <objects>
+                <viewController storyboardIdentifier="popup" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LVA-S7-MrD" customClass="PopUpViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u2P-A2-5yX"/>
+                        <viewControllerLayoutGuide type="bottom" id="rlK-eb-f5y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x3R-rG-NTO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdi-FM-Jyt">
+                                <rect key="frame" x="67" y="203" width="240" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MH-CV-6Kk">
+                                        <rect key="frame" x="12" y="32" width="216" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-og-JpF">
+                                        <rect key="frame" x="97" y="101" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-RQ-GrZ">
+                                        <rect key="frame" x="56" y="188" width="114" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Dimiss"/>
+                                        <connections>
+                                            <action selector="dismissBtnAction:" destination="LVA-S7-MrD" eventType="touchUpInside" id="ivd-yF-m8W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.62578543779999996" green="0.12570050860000001" blue="0.71831369980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelDisplay" destination="0MH-CV-6Kk" id="y3K-Vf-cYC"/>
+                        <outlet property="popUpView" destination="vdi-FM-Jyt" id="W1p-BH-15d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btJ-ht-AqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.79999999999995" y="127.28635682158921"/>
+        </scene>
     </scenes>
 </document>
