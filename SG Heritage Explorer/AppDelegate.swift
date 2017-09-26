@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftLocation;
+import CoreLocation;
+import Mapbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
         UIApplication.shared.cancelAllLocalNotifications()
+     
+        
         return true
     }
 

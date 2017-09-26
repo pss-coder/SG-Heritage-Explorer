@@ -2,26 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>MGLMapboxAccessToken</key>
-    <string>pk.eyJ1IjoicGF3YW5kZWVwc2luZ2giLCJhIjoiY2o3Z2dibHZuMTdnbDJ3bzJyNm9xcTQydiJ9.B_i409jkzN1D2e8wR5jfxA</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Using Location Now</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Shows your location on the map and helps improve OpenStreetMap.</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-        <key>https://maps-json.onemap.sg/Default</key>
-        <dict>
-            <key>NSIncludesSubdomains</key>
-            <true/>
-            <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-            <true/>
-            <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-            <false/>
-        </dict>
-    </dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -40,6 +20,28 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoicGF3YW5kZWVwc2luZ2giLCJhIjoiY2o3Z2dibHZuMTdnbDJ3bzJyNm9xcTQydiJ9.B_i409jkzN1D2e8wR5jfxA</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>https://maps-json.onemap.sg/Default</key>
+		<dict>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Shows your location on the map and helps improve OpenStreetMap.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
