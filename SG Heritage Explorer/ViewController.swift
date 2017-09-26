@@ -96,19 +96,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
      */
     private func setAnnotationsFor(Heritages:[Heritage])
     {
-        // Create four new point annotations with specified coordinates and titles.
-//        let pointA = HeritageAnnotation()
-//        pointA.coordinate = CLLocationCoordinate2D(latitude: 1.2867888749929002, longitude: 103.8545510172844)
-//        pointA.title = "Merlion Park"
-//        pointA.willUseImage = false;
-//        
-//        let pointB = HeritageAnnotation()
-//        pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
-//        pointB.title = "Pawan Home"
-//        pointB.willUseImage = false;
-//        
-//        let heritageSites = [pointA,pointB];
-//        mapView.addAnnotations(heritageSites);
         
         var heritageAnnotations:[HeritageAnnotation] = [];
         
@@ -128,16 +115,29 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     /**
      Method will Set up geofencing for each Heritage Sites
      */
-    private func setGeoFencingFor()
+    private func setGeoFencingFor(Heritages:[Heritage])
     {
+        
+        for heritage in Heritages
+        {
+            let heritageCenter = CLLocationCoordinate2DMake(heritage.location.latitude, heritage.location.longtitude);
+            let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: heritageCenter, withMeterRadius: 500);
+            self.mapView.addAnnotation(polygon);
+            
+        let heritageGeoFenceRegion = CLCircularRegion(center: heritageCenter, radius: 500, identifier: heritage.name);
+          MapUtilities.CreateGeoFence(forRegion: heritageGeoFenceRegion,onView: self);
+           
+        
+        }
+        
         //set up geofencing monitoring for heritage
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
-        MapUtilities.CreateGeoFence(forRegion: geofenceRegion,onView: self);
+        //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
+        //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
+        //MapUtilities.CreateGeoFence(forRegion: geofenceRegion,onView: self);
         
         //display geofencing region (optional to have)
-        let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
-        self.mapView.addAnnotation(polygon)
+      //  let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
+      //  self.mapView.addAnnotation(polygon)
     }
     
     
