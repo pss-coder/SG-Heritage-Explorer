@@ -26,6 +26,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         DisplayOneMapBaseMap();
         mapView.delegate = self;
+       
         
         //setGeoFencingFor();
        
