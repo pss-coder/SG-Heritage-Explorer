@@ -33,7 +33,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.delegate = self;
        
         
-        //setGeoFencingFor();
+       // setGeoFencingFor(Heritages: LoadHeritages());
         setAnnotationsFor(Heritages: LoadHeritages());
         
         setGeoFencingFor(Heritages: LoadHeritages());
