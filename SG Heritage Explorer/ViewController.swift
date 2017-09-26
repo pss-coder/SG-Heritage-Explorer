@@ -181,11 +181,23 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 //        //WHEN IMAGE OR THE CALLOUT IS TAPPED :
 //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let newViewController = storyBoard.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController;
-//        // print(annotation.title!);
+//        print(annotation.title!);
 //        
 //        // newViewController.text = "test 123";
 //        self.present(newViewController, animated: true, completion: nil)
 //        newViewController.labeltest.text = annotation.title!;
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let popupViewController = storyBoard.instantiateViewController(withIdentifier: "popup") as! PopUpViewController;
+        
+      
+        
+        //present method must be called before setting contents
+        self.present(popupViewController, animated: true, completion: nil)
+          popupViewController.labelDisplay.text = annotation.title!;
+
+        
+        
         print("Tapped the callout for: \(annotation)")
         
         // Hide the callout.
