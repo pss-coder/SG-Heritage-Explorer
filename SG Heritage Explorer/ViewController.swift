@@ -28,8 +28,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.delegate = self;
         
         //setGeoFencingFor();
-        
-        setHeritageAnnotation();
+        setAnnotationsFor(Heritages: LoadHeritages());
         
        
         
@@ -62,7 +61,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         //Show User Current Locations
         mapView.showsUserLocation = true;
-       //  mapView.setUserTrackingMode(.followWithHeading, animated: false)
+         mapView.setUserTrackingMode(.followWithHeading, animated: false)
         
         let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
 
@@ -73,24 +72,50 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     /**
      Method will Display Heritage Sites onto Map
      */
-    private func LoadHeritage(){}
+    private func LoadHeritages() -> [Heritage]
+    {
+        var Heritages:[Heritage] = [];
+        
+        let merlionPark = Heritage(name: "Merlion Park", description: "Merlion Roar",location: Location(latitude: 1.2867888749929002, longtitude: 103.8545510172844));
+        
+        //pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
+        let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965));
+        
+        Heritages.append(merlionPark);
+        Heritages.append(PawanHome);
+        
+        return Heritages;
+    }
     
     /***/
-    private func setHeritageAnnotation()
+    private func setAnnotationsFor(Heritages:[Heritage])
     {
         // Create four new point annotations with specified coordinates and titles.
-        let pointA = HeritageAnnotation()
-        pointA.coordinate = CLLocationCoordinate2D(latitude: 1.2867888749929002, longitude: 103.8545510172844)
-        pointA.title = "Merlion Park"
-        pointA.willUseImage = false;
+//        let pointA = HeritageAnnotation()
+//        pointA.coordinate = CLLocationCoordinate2D(latitude: 1.2867888749929002, longitude: 103.8545510172844)
+//        pointA.title = "Merlion Park"
+//        pointA.willUseImage = false;
+//        
+//        let pointB = HeritageAnnotation()
+//        pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
+//        pointB.title = "Pawan Home"
+//        pointB.willUseImage = false;
+//        
+//        let heritageSites = [pointA,pointB];
+//        mapView.addAnnotations(heritageSites);
         
-        let pointB = HeritageAnnotation()
-        pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
-        pointB.title = "Pawan Home"
-        pointB.willUseImage = false;
+        var heritageAnnotations:[HeritageAnnotation] = [];
         
-        let heritageSites = [pointA,pointB];
-        mapView.addAnnotations(heritageSites);
+        for heritage in Heritages
+        {
+            let annotation = HeritageAnnotation();
+            annotation.coordinate = CLLocationCoordinate2D(latitude: heritage.location.latitude, longitude: heritage.location.longtitude);
+            annotation.title = heritage.name;
+            annotation.willUseImage = false;
+            heritageAnnotations.append(annotation);
+            
+        }
+        mapView.addAnnotations(heritageAnnotations);
     }
     
     

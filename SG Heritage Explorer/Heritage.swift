@@ -34,6 +34,13 @@ public class Heritage
         self.location = location;
     }
     
+    init(name:String,description:String,location:Location) {
+        self.name = name;
+        self.description = description;
+        //self.image = image;
+        self.location = location;
+    }
+    
     
     
 }
