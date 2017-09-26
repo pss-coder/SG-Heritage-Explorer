@@ -10,7 +10,7 @@ import UIKit
 
 class Place: NSObject {
 
-    var place: String?
+    var locationplace: String?
     var lat: String?
     var long: String?
 

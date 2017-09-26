@@ -45,21 +45,18 @@ public class LocationData {
                     let place = Place() // intance the class
                     if let locationPlace = articleFromJson["SEARCHVAL"] as? String, let lat = articleFromJson["LATITUDE"] as? String, let long = articleFromJson["LONGTITUDE"] as? String{
                         
-                        place.place = locationPlace    // same name as the name in the class
+                        place.locationplace = locationPlace    // same name as the name in the class
                         place.lat = lat
                         place.long = long
-                       
-                       places?.append(place)  //pushing all the specific value from the JSON to an array
                         
+                       places?.append(place)  //pushing all the specific value from the JSON to an array
+                
                       
                     }
                     
                 }
             }
            
-//            DispatchQueue.main.async {
-//                self.tableview.reloadData()
-//            }
             
         } catch let error {
             print(error)
