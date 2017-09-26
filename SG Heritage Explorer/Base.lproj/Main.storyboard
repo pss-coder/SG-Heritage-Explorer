@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="905" y="-748"/>
         </scene>
         <!--Rewards View Controller-->
         <scene sceneID="x3R-Ln-kfD">
@@ -100,7 +100,7 @@
         <!--Pop Up View Controller-->
         <scene sceneID="KnR-el-w61">
             <objects>
-                <viewController storyboardIdentifier="popup" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LVA-S7-MrD" customClass="PopUpViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popup" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LVA-S7-MrD" customClass="PopUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u2P-A2-5yX"/>
                         <viewControllerLayoutGuide type="bottom" id="rlK-eb-f5y"/>
