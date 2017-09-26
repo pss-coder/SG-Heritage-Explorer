@@ -28,6 +28,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.delegate = self;
         
         //setGeoFencingFor();
+        
+        setHeritageAnnotation();
+        
        
         
     }
@@ -71,7 +74,25 @@ class ViewController: UIViewController,MGLMapViewDelegate {
      Method will Display Heritage Sites onto Map
      */
     private func LoadHeritage(){}
+    
     /***/
+    private func setHeritageAnnotation()
+    {
+        // Create four new point annotations with specified coordinates and titles.
+        let pointA = HeritageAnnotation()
+        pointA.coordinate = CLLocationCoordinate2D(latitude: 1.2867888749929002, longitude: 103.8545510172844)
+        pointA.title = "Merlion Park"
+        pointA.willUseImage = false;
+        
+        let pointB = HeritageAnnotation()
+        pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
+        pointB.title = "Pawan Home"
+        pointB.willUseImage = false;
+        
+        let heritageSites = [pointA,pointB];
+        mapView.addAnnotations(heritageSites);
+    }
+    
     
     /**
      Method will Set up geofencing for each Heritage Sites
@@ -124,7 +145,12 @@ class ViewController: UIViewController,MGLMapViewDelegate {
      */
     func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
         //PUT THE DIRECTIONS BUTTON HERE
-        return UIButton(type: .detailDisclosure)
+       // return UIButton(type: .detailDisclosure)
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
+        //button.setTitle("Directions", for: .normal);
+        button.setBackgroundImage(UIImage(named: "directionsIcon"), for: .normal)
+        return button;
     }
     
     //DIRECTIONS  BTN CLICK
@@ -136,9 +162,14 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.deselectAnnotation(annotation, animated: false)
         
         // Show an alert containing the annotation's details
-        let alert = UIAlertController(title: annotation.title!!, message: "A lovely (if touristy) place.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: annotation.title!!, message: "A lovely (if touristy) place.", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+        
+        
+        let from = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.286789, longitude: 103.854501), name: "Merlion Park");
+        let to = Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965), name: "House");
+        MapUtilities.Route(from: from, to: to, mapView: mapView);
         
     }
     
@@ -163,6 +194,10 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
 //  ====================================   ANNOTATION STYLE LOOK ==============================
     //MARK: Annotation Style
+    
+    
+    
+    
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
         return 1
     }
@@ -194,9 +229,39 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         return 2.0
     }
     
+//    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+//        
+//        if let castAnnotation = annotation as? HeritageAnnotation {
+//            if (castAnnotation.willUseImage) {
+//                return nil;
+//            }
+//        }
+//        
+//        // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
+//        let reuseIdentifier = "reusableDotView"
+//        
+//        // For better performance, always try to reuse existing annotations.
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+//        
+//        // If there’s no reusable annotation view available, initialize a new one.
+//        if annotationView == nil {
+//            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+//            annotationView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+//            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
+//            annotationView?.layer.borderWidth = 4.0
+//            annotationView?.layer.borderColor = UIColor.white.cgColor
+//            annotationView!.backgroundColor = UIColor(red:0.03, green:0.80, blue:0.69, alpha:1.0)
+//        }
+//        
+//        return annotationView
+//    }
     
-     
 
 
+}
+
+public class HeritageAnnotation:MGLPointAnnotation
+{
+    var willUseImage: Bool = false;
 }
 
