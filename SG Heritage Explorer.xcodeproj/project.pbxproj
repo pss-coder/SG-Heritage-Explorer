@@ -178,9 +178,9 @@
 		251E34141F7814C30011B98B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
 				25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */,
 				25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */,
-				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
