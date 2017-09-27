@@ -35,6 +35,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         //setGeoFencingFor();
         setAnnotationsFor(Heritages: LoadHeritages());
         
+        //Hide the menu when the view loads
+        menu.isHidden = true
+        
        
         
     }
