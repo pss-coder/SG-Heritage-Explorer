@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D4E16C71F7ABB3600F24DB1 /* LatestRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4E16C61F7ABB3600F24DB1 /* LatestRewards.swift */; };
+		1DF509091F7B79B000D831C9 /* UniversalStudios.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF509061F7B79B000D831C9 /* UniversalStudios.png */; };
+		1DF5090A1F7B79B000D831C9 /* WildWildWet.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF509071F7B79B000D831C9 /* WildWildWet.png */; };
+		1DF5090B1F7B79B000D831C9 /* Zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF509081F7B79B000D831C9 /* Zoo.png */; };
 		250E6BE31F78D44A00192ACE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250E6BE21F78D44A00192ACE /* MapKit.framework */; };
 		250E6BE51F78DB4200192ACE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250E6BE41F78DB4200192ACE /* CoreLocation.framework */; };
 		251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33ED1F77FE4C0011B98B /* AppDelegate.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		1D4E16C61F7ABB3600F24DB1 /* LatestRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestRewards.swift; sourceTree = "<group>"; };
+		1DF509061F7B79B000D831C9 /* UniversalStudios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalStudios.png; sourceTree = "<group>"; };
+		1DF509071F7B79B000D831C9 /* WildWildWet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WildWildWet.png; sourceTree = "<group>"; };
+		1DF509081F7B79B000D831C9 /* Zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zoo.png; sourceTree = "<group>"; };
 		250E6BE21F78D44A00192ACE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		250E6BE41F78DB4200192ACE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		251E33EA1F77FE4C0011B98B /* SG Heritage Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SG Heritage Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +148,9 @@
 		251E33EC1F77FE4C0011B98B /* SG Heritage Explorer */ = {
 			isa = PBXGroup;
 			children = (
+				1DF509061F7B79B000D831C9 /* UniversalStudios.png */,
+				1DF509071F7B79B000D831C9 /* WildWildWet.png */,
+				1DF509081F7B79B000D831C9 /* Zoo.png */,
 				1D4E16C51F7ABAA300F24DB1 /* Custom Controllers */,
 				251E34131F7814B50011B98B /* Storyboard */,
 				251E34141F7814C30011B98B /* View Controllers */,
@@ -324,8 +333,11 @@
 			files = (
 				251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */,
 				253268C71F78C8F400F0FBBB /* test.gpx in Resources */,
+				1DF5090A1F7B79B000D831C9 /* WildWildWet.png in Resources */,
 				251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */,
+				1DF509091F7B79B000D831C9 /* UniversalStudios.png in Resources */,
 				253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */,
+				1DF5090B1F7B79B000D831C9 /* Zoo.png in Resources */,
 				25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */,
 				25E28C701F7A2249009C254E /* turn-right (1).png in Resources */,
 			);
