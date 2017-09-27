@@ -119,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */,
+				112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -181,6 +182,7 @@
 				251E34171F7815210011B98B /* Quiz.swift */,
 				251E341B1F7815360011B98B /* Location.swift */,
 				251E341E1F78154A0011B98B /* Rewards.swift */,
+				112D7CAE1F7B77D200FB5E00 /* Place.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,7 +202,6 @@
 				25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */,
 				25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */,
 				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
-				112D7CAE1F7B77D200FB5E00 /* Place.swift */,
 				112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */,
 				112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */,
 				1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */,
@@ -220,7 +221,7 @@
 		253268C91F78CC1A00F0FBBB /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				11C5CED01F795A0D00CCB8A1 /* LocationData.swift */,
+				11C5CED01F795A0D00CCB8A1 /* LocationController.swift */,
 			);
 			name = DataAccess;
 			sourceTree = "<group>";
