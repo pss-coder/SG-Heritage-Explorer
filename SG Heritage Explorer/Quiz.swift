@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+public class Quiz {
+    
+    var Questions:String?
+    
+    
+    
+}
