@@ -42,7 +42,21 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         setAnnotationsFor(Heritages: LoadHeritages())
         setGeoFencingFor(Heritages: LoadHeritages())
        
-               
+        //LocationData.fetchPlaces(search: "Merlion Park");
+        LocationController.retrieveLocations(search: "Merlion Park");
+        
+//        for loc in LocationController.locations
+//        {
+//            print("===================");
+//            print(loc.latitude);
+//            print("===================");
+//            print(loc.longtitude);
+//            print("===================");
+//            print(loc.locationAddress.name);
+//            print("===================");
+//            
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,14 +100,16 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private func LoadHeritages() -> [Heritage]
     {
         var Heritages:[Heritage] = [];
+        //LocationController.retrieveLocations(search: "Merlion Park");
+        //LocationController.locations = [];
         
-        let merlionPark = Heritage(name: "Merlion Park", description: "Merlion Roar",location: Location(latitude: 1.2867888749929002, longtitude: 103.8545510172844));
+        let merlionPark = Heritage(name: "Merlion Park", description: "Merlion Roar",location: Location(latitude: 1.2867888749929002, longtitude: 103.8545510172844,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
         
         //pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
-        let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965));
+        let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
         
-        let SGBotanicGardens = Heritage(name: "Singapore Botanic Gardens", description: "Alot of flowers", location: Location(latitude: 1.313840, longtitude: 103.815914));
-        let RafflesStatute = Heritage(name: "Raffles Statue", description: "White", location: Location(latitude: 1.287722, longtitude: 103.850755));
+        let SGBotanicGardens = Heritage(name: "Singapore Botanic Gardens", description: "Alot of flowers", location: Location(latitude: 1.313840, longtitude: 103.815914,address: Location.Address(name: "", blockNum: "", roadName: "", building: "")));
+        let RafflesStatute = Heritage(name: "Raffles Statue", description: "White", location: Location(latitude: 1.287722, longtitude: 103.850755,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
         
         Heritages.append(merlionPark);
         Heritages.append(SGBotanicGardens);
@@ -188,9 +204,10 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         return button;
     }
     
-    //DIRECTIONS  BTN CLICK
+   
     /**
-     Delagate Method to Handle when RIGHT SIDE CALLOUT IS TAPPED
+     DIRECTIONS  BTN CLICK.
+     Delagate Method to Handle when RIGHT SIDE CALLOUT IS TAPPED.
      */
     func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
         // Hide the callout view.
@@ -214,25 +231,13 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
 //        // Optionally handle taps on the callout.
 //        //WHEN IMAGE OR THE CALLOUT IS TAPPED :
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "popUp") as! PopUpViewController;
-//        print(annotation.title!);
-//        
-//        // newViewController.text = "test 123";
-//        self.present(newViewController, animated: true, completion: nil)
-//        newViewController.labeltest.text = annotation.title!;
-        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let popupViewController = storyBoard.instantiateViewController(withIdentifier: "popup") as! PopUpViewController;
-        
-      
-        
+
         //present method must be called before setting contents
         self.present(popupViewController, animated: true, completion: nil)
           popupViewController.labelDisplay.text = annotation.title!;
 
-        
-        
         print("Tapped the callout for: \(annotation)")
         
         // Hide the callout.
