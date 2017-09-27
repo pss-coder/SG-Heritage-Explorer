@@ -155,12 +155,36 @@
                     <view key="view" contentMode="scaleToFill" id="rRh-bX-WWo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="saN-jn-3Uh" customClass="LatestRewards" customModule="SG_Heritage_Explorer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="537" width="343" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCY-Oi-Aa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743.2" y="124.58770614692655"/>
+        </scene>
+        <!--Rewards View Controller-->
+        <scene sceneID="Hjv-k7-6K5">
+            <objects>
+                <viewController id="2ka-M4-nmt" customClass="RewardsViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YWI-bH-niq"/>
+                        <viewControllerLayoutGuide type="bottom" id="mwS-5Z-tsZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GVy-LN-P9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meq-90-AJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="840"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kPd-Sy-SAH">
@@ -203,17 +227,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-og-JpF">
-                                        <rect key="frame" x="84" y="101" width="72" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Start QuIX"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-RQ-GrZ">
                                         <rect key="frame" x="56" y="188" width="114" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Dimiss"/>
                                         <connections>
                                             <action selector="dismissBtnAction:" destination="LVA-S7-MrD" eventType="touchUpInside" id="ivd-yF-m8W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-og-JpF">
+                                        <rect key="frame" x="77" y="115" width="87" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Start Quiz"/>
+                                        <connections>
+                                            <segue destination="2ka-M4-nmt" kind="popoverPresentation" popoverAnchorView="WEA-og-JpF" id="qSJ-7a-38h">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                 </subviews>

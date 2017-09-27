@@ -46,14 +46,15 @@ class PopUpViewController: UIViewController {
      Any tap outside of the popup view will dimiss the popup
      */
     override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
-        let touch: UITouch? = touches.first
+        let touch: UITouch? = touches.first;
         //location is relative to the current view
         // do something with the touched point
         if touch?.view != popUpView {
-            //yourView.isHidden = true
-            dismiss(animated: true, completion: nil);
+            popUpView.isHidden = true
+            //dismiss(animated: true, completion: nil);
         }
     }
+    
     
     
     /**

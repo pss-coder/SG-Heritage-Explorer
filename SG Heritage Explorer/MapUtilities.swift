@@ -109,7 +109,7 @@ public class MapUtilities{
         //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
         //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
        // polygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
-        print("geofence start for")
+        print("geofence start for \(forRegion.identifier)");
         
         do {
             //let loc = CLLocationCoordinate2DMake( 42.972474, 13.757332)
