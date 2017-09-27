@@ -224,13 +224,15 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let popupViewController = storyBoard.instantiateViewController(withIdentifier: "popup") as! PopUpViewController;
+       
         
       
         
         //present method must be called before setting contents
         self.present(popupViewController, animated: true, completion: nil)
           popupViewController.labelDisplay.text = annotation.title!;
-
+        
+     
         
         
         print("Tapped the callout for: \(annotation)")

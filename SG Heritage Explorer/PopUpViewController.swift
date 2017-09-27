@@ -14,7 +14,7 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var labelDisplay: UILabel!//remove this later,just for testing
     
-    
+     var text:String! = ""
     
     
     
@@ -63,5 +63,17 @@ class PopUpViewController: UIViewController {
     @IBAction func dismissBtnAction(_ sender: Any) {
         dismiss(animated: true, completion: nil);
     }
+    
+    //Start Quiz action
+    @IBAction func startquizBtnAction(_ sender: Any) {
+       
+       
+        let vc = PopUpViewController()
+        vc.text = labelDisplay.text
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+           }
+    
 
 }
