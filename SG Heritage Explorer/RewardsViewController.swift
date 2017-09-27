@@ -41,7 +41,7 @@ class RewardsViewController: UIViewController {
     // Animate the UICircular ProgressRing
     func animation () {
         
-        progressRing.setProgress(value: 49, animationDuration: 2.0) {
+        //progressRing.setProgress(value: 49, animationDuration: 2.0) {
             print("Done animating!")
         }
 
@@ -62,4 +62,4 @@ class RewardsViewController: UIViewController {
  
 }
 
-}
+
