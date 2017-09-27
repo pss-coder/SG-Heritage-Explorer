@@ -11,7 +11,7 @@ import Mapbox
 import MapboxDirections
 import SwiftLocation
 import UICircularProgressRing
-
+import CoreLocation
 
 class ViewController: UIViewController,MGLMapViewDelegate {
 
@@ -26,20 +26,23 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private let oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
     @IBOutlet weak var mapView: MGLMapView!
     
+    let locationManager = CLLocationManager();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DisplayOneMapBaseMap();
         mapView.delegate = self;
        
+        locationManager.distanceFilter = kCLDistanceFilterNone;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
        // setGeoFencingFor(Heritages: LoadHeritages());
         setAnnotationsFor(Heritages: LoadHeritages());
+
+        setGeoFencingFor(Heritages: LoadHeritages());
         
-        //Hide the menu when the view loads
-        menu.isHidden = true
         
-       
         
     }
 
@@ -90,7 +93,12 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         //pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
         let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965));
         
+        let SGBotanicGardens = Heritage(name: "Singapore Botanic Gardens", description: "Alot of flowers", location: Location(latitude: 1.313840, longtitude: 103.815914));
+        let RafflesStatute = Heritage(name: "Raffles Statue", description: "White", location: Location(latitude: 1.287722, longtitude: 103.850755));
+        
         Heritages.append(merlionPark);
+        Heritages.append(SGBotanicGardens);
+        Heritages.append(RafflesStatute);
         Heritages.append(PawanHome);
         
         return Heritages;
@@ -109,6 +117,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             let annotation = HeritageAnnotation();
             annotation.coordinate = CLLocationCoordinate2D(latitude: heritage.location.latitude, longitude: heritage.location.longtitude);
             annotation.title = heritage.name;
+            annotation.subtitle = heritage.description;
             annotation.willUseImage = false;
             heritageAnnotations.append(annotation);
             
@@ -126,23 +135,14 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         for heritage in Heritages
         {
             let heritageCenter = CLLocationCoordinate2DMake(heritage.location.latitude, heritage.location.longtitude);
-            let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: heritageCenter, withMeterRadius: 500);
+            let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: heritageCenter, withMeterRadius: 50);
             self.mapView.addAnnotation(polygon);
             
-        let heritageGeoFenceRegion = CLCircularRegion(center: heritageCenter, radius: 500, identifier: heritage.name);
+        let heritageGeoFenceRegion = CLCircularRegion(center: heritageCenter, radius: 50, identifier: heritage.name);
           MapUtilities.CreateGeoFence(forRegion: heritageGeoFenceRegion,onView: self);
            
         
         }
-        
-        //set up geofencing monitoring for heritage
-        //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
-        //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
-        //MapUtilities.CreateGeoFence(forRegion: geofenceRegion,onView: self);
-        
-        //display geofencing region (optional to have)
-      //  let polygon = MapUtilities.DrawPolygonCircleForCoordinate(coordinate: geofenceRegionCenter, withMeterRadius: 500);
-      //  self.mapView.addAnnotation(polygon)
     }
     
     
@@ -184,7 +184,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
        // return UIButton(type: .detailDisclosure)
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
-       // button.setTitle("Directions", for: .normal);
+      //  button.setTitle("Directions", for: .normal);
        button.setBackgroundImage(UIImage(named: "directionsIcon"), for: .normal)
         return button;
     }
