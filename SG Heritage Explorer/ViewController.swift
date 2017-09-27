@@ -37,13 +37,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         locationManager.distanceFilter = kCLDistanceFilterNone;
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
-       // setGeoFencingFor(Heritages: LoadHeritages());
-        setAnnotationsFor(Heritages: LoadHeritages());
-
-        setGeoFencingFor(Heritages: LoadHeritages());
-        
-        
-        
+        //setGeoFencingFor();
+       
+               
     }
 
     override func didReceiveMemoryWarning() {
@@ -319,6 +315,16 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         }
 
     }
+    
+    @IBAction func search(_ sender: Any) {
+        
+        print("wotrrg")
+        
+       // let a =  SearchViewController();
+        
+      //   a.fetchPlaces()
+    }
+    
 
 }
 
