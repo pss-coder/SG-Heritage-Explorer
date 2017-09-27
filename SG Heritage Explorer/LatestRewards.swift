@@ -50,22 +50,7 @@ import UIKit
     
     //Private functions 
     private func setupButtons() {
-//        
-//        ImageArray.removeAll()
-//        
-//        
-////        //Images 
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+
         
         //Clear the existing button in the array 
         //Clear the existing button in the array
