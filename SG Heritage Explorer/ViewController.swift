@@ -38,6 +38,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
         //setGeoFencingFor();
+        
+        setAnnotationsFor(Heritages: LoadHeritages())
+        setGeoFencingFor(Heritages: LoadHeritages())
        
                
     }
