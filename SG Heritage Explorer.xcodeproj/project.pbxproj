@@ -10,7 +10,6 @@
 		112D7CAF1F7B77D200FB5E00 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CAE1F7B77D200FB5E00 /* Place.swift */; };
 		112D7CB11F7B7C5800FB5E00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */; };
 		112D7CB31F7B7FB900FB5E00 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */; };
-		11C5CED11F795A0D00CCB8A1 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5CED01F795A0D00CCB8A1 /* LocationData.swift */; };
 		1DA66BD71F7BA48100D9C385 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */; };
 		1DBD43541F7B94B0006C9B13 /* LatestRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */; };
 		1DBD43591F7B94BB006C9B13 /* WildWildWet.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBD43561F7B94BB006C9B13 /* WildWildWet.png */; };
@@ -50,7 +49,6 @@
 		112D7CAE1F7B77D200FB5E00 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
-		11C5CED01F795A0D00CCB8A1 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestRewards.swift; sourceTree = "<group>"; };
 		1DBD43561F7B94BB006C9B13 /* WildWildWet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WildWildWet.png; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		253268C91F78CC1A00F0FBBB /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				11C5CED01F795A0D00CCB8A1 /* LocationData.swift */,
 			);
 			name = DataAccess;
 			sourceTree = "<group>";
@@ -480,7 +477,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C5CED11F795A0D00CCB8A1 /* LocationData.swift in Sources */,
 				1DA66BD71F7BA48100D9C385 /* QuizViewController.swift in Sources */,
 				251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */,
 				25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */,
