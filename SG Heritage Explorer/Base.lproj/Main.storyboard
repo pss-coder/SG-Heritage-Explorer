@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1743.2" y="124.58770614692655"/>
         </scene>
-        <!--View Controller-->
+        <!--Rewards View Controller-->
         <scene sceneID="Hjv-k7-6K5">
             <objects>
-                <viewController id="2ka-M4-nmt" sceneMemberID="viewController">
+                <viewController id="2ka-M4-nmt" customClass="RewardsViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWI-bH-niq"/>
                         <viewControllerLayoutGuide type="bottom" id="mwS-5Z-tsZ"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LatestRewards: UIStackView {
+@IBDesignable class LatestRewards: UIStackView {
 
     /*
     // Only override draw() if you perform custom drawing.

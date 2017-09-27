@@ -184,8 +184,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
        // return UIButton(type: .detailDisclosure)
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
-        //button.setTitle("Directions", for: .normal);
-        button.setBackgroundImage(UIImage(named: "directionsIcon"), for: .normal)
+       // button.setTitle("Directions", for: .normal);
+       button.setBackgroundImage(UIImage(named: "directionsIcon"), for: .normal)
         return button;
     }
     
