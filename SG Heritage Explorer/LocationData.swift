@@ -13,11 +13,12 @@ import UIKit;
 public class LocationData {
     
     
+    static var places: [Place]? = []
     
-
-    static func fetchPlaces( locationplace: String) {
+    static func fetchPlaces( locationplace: String,tableview:UITableView)
+    {
     
-   var places: [Place]? = []
+   
     
     
     let url = URL(string: "https://developers.onemap.sg/commonapi/search?searchVal=\(locationplace)&returnGeom=Y&getAddrDetails=Y".addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!   //To pull data from web
@@ -49,15 +50,17 @@ public class LocationData {
                         place.lat = lat
                         place.long = long
                         
-                       places?.append(place)  //pushing all the specific value from the JSON to an array
+                      
                 
                       
                     }
-                    
+                     places?.append(place)  //pushing all the specific value from the JSON to an array
                 }
             }
            
-            
+            DispatchQueue.main.async {
+                tableview.reloadData()
+            }
         } catch let error {
             print(error)
         }
