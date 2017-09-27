@@ -69,13 +69,20 @@ class PopUpViewController: UIViewController {
     //Start Quiz action
     @IBAction func startquizBtnAction(_ sender: Any) {
        
-       
-        let vc = PopUpViewController()
-        vc.text = labelDisplay.text
+       let LocationValue = labelDisplay.text
+        performSegue(withIdentifier: "toQuizViewController", sender: LocationValue)
         
-        navigationController?.pushViewController(vc, animated: true)
-        
-           }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toQuizViewController"){
+            if let destination = segue.destination as? QuizViewController {
+                
+                destination.passedTitle =  sender as? String
+                
+            }
+        }
+    }
     
 
 }

@@ -189,7 +189,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="Hjv-k7-6K5">
             <objects>
-                <viewController storyboardIdentifier="QuizViewController" id="2ka-M4-nmt" customClass="QuizViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ka-M4-nmt" customClass="QuizViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWI-bH-niq"/>
                         <viewControllerLayoutGuide type="bottom" id="mwS-5Z-tsZ"/>
@@ -268,7 +268,7 @@
                                         <state key="normal" title="Start Quiz"/>
                                         <connections>
                                             <action selector="startquizBtnAction:" destination="LVA-S7-MrD" eventType="touchUpInside" id="GiY-Xz-xBM"/>
-                                            <segue destination="2ka-M4-nmt" kind="popoverPresentation" popoverAnchorView="WEA-og-JpF" id="qSJ-7a-38h">
+                                            <segue destination="2ka-M4-nmt" kind="popoverPresentation" identifier="toQuizViewController" popoverAnchorView="WEA-og-JpF" id="qSJ-7a-38h">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>

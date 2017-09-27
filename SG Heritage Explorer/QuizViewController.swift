@@ -11,7 +11,7 @@ import UIKit
 class QuizViewController: UIViewController {
     
     //properties
-    var text:String! = "";
+    var passedTitle:String!
     
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class QuizViewController: UIViewController {
         
      
        print("Starting")
-       print(text)
+       print(passedTitle)
         
         
         
