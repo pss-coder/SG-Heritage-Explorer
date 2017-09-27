@@ -95,14 +95,14 @@ import UIKit
             
             
             let bundle = Bundle(for: type(of: self))
-         //   let RewardsImage = UIImage(named: "UniversalStudios", in: bundle, compatibleWith: self.traitCollection)
+            let RewardsImage = UIImage(named: "UniversalStudios", in: bundle, compatibleWith: self.traitCollection)
             
             //Add Contraints
             Rewards.translatesAutoresizingMaskIntoConstraints = false
             Rewards.heightAnchor.constraint(equalToConstant: rewardsSize.height).isActive = true
             Rewards.widthAnchor.constraint(equalToConstant: rewardsSize.width).isActive = true
             
-            //Rewards.setImage(RewardsImage, for: .normal)
+            Rewards.setImage(RewardsImage, for: .normal)
 
             
             

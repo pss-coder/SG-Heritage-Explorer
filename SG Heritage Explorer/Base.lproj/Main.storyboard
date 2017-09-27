@@ -168,6 +168,24 @@
             </objects>
             <point key="canvasLocation" x="1743.2" y="124.58770614692655"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GdP-6P-26D">
+            <objects>
+                <viewController id="kYm-9y-cD8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pOY-Nj-LNh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ahO-cP-i5U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FWn-Hr-SGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r93-Wz-zDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="149"/>
+        </scene>
         <!--Rewards View Controller-->
         <scene sceneID="Hjv-k7-6K5">
             <objects>
