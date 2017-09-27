@@ -239,9 +239,6 @@
                                         <rect key="frame" x="77" y="115" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Start Quiz"/>
-                                        <connections>
-                                            <segue destination="2ka-M4-nmt" kind="modal" id="AVU-Fs-idK"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.62578543779999996" green="0.12570050860000001" blue="0.71831369980000004" alpha="1" colorSpace="calibratedRGB"/>

@@ -51,9 +51,8 @@ class PopUpViewController: UIViewController {
         // do something with the touched point
         if touch?.view != popUpView {
             //popUpView.isHidden = true
-            
-            
             self.dismiss(animated: true, completion: nil);
+           
         }
     }
     
