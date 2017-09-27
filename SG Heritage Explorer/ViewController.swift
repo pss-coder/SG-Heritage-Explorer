@@ -330,14 +330,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 
     }
     
-    @IBAction func search(_ sender: Any) {
-        
-        print("wotrrg")
-        
-       // let a =  SearchViewController();
-        
-      //   a.fetchPlaces()
-    }
+    
     
 
 }

@@ -53,7 +53,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="rUj-0g-39W">
                             <connections>
-                                <action selector="search:" destination="BYZ-38-t0r" id="buS-PD-Ubi"/>
                                 <segue destination="hXE-Oq-YTL" kind="show" id="tI4-Oj-BoW"/>
                             </connections>
                         </barButtonItem>
