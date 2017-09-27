@@ -30,6 +30,7 @@
 		253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */; };
 		25773DF21F7A4FB7003D7A9F /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */; };
 		25773DF41F7A4FEA003D7A9F /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */; };
+		25CA43BA1F7BB8DA00B178CE /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA43B91F7BB8DA00B178CE /* LocationController.swift */; };
 		25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C631F7977B4009C254E /* AppUtilities.swift */; };
 		25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C691F7A1EA0009C254E /* Assets.xcassets */; };
 		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
@@ -74,6 +75,7 @@
 		253268C61F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestLocations 14-01-07-612.gpx"; sourceTree = "<group>"; };
 		25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		25CA43B91F7BB8DA00B178CE /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		25E28C631F7977B4009C254E /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
 		25E28C691F7A1EA0009C254E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E4DF8D1F7B7C7D001692EF /* raffleplace.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = raffleplace.gpx; sourceTree = "<group>"; };
@@ -115,12 +117,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1D4E16C51F7ABAA300F24DB1 /* Custom Controllers */ = {
+		1D4E16C51F7ABAA300F24DB1 /* Custom Control */ = {
 			isa = PBXGroup;
 			children = (
 				1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */,
 			);
-			name = "Custom Controllers";
+			name = "Custom Control";
 			sourceTree = "<group>";
 		};
 		251E33E11F77FE4C0011B98B = {
@@ -150,7 +152,7 @@
 		251E33EC1F77FE4C0011B98B /* SG Heritage Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				1D4E16C51F7ABAA300F24DB1 /* Custom Controllers */,
+				1D4E16C51F7ABAA300F24DB1 /* Custom Control */,
 				251E34131F7814B50011B98B /* Storyboard */,
 				251E34141F7814C30011B98B /* View Controllers */,
 				251E34111F7814960011B98B /* Model */,
