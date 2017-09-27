@@ -43,8 +43,12 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         setGeoFencingFor(Heritages: LoadHeritages())
        
         //LocationData.fetchPlaces(search: "Merlion Park");
-        LocationController.retrieveLocations(search: "Merlion Park");
+//        LocationController.retrieveLocations(search: "Merlion Park");
         
+        LocationController.retrieveLocations(search: "merlion park"){
+            genres in
+            print("View Controller: \(genres[0].latitude)")
+        }
 //        for loc in LocationController.locations
 //        {
 //            print("===================");

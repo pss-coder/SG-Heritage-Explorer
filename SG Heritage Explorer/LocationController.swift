@@ -14,9 +14,9 @@ public class LocationController {
     
    // static var locations:[Location] = [];
     
-    static func retrieveLocations(search:String){
+    static func retrieveLocations(search:String,completionHandler: @escaping (_ genres: [Location]) -> ()){
         var locations:[Location] = [];
-        
+        // array to push the selected value
         
         let url = URL(string: "https://developers.onemap.sg/commonapi/search?searchVal=\(search)&returnGeom=Y&getAddrDetails=Y".addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!   //To pull data from web
         
@@ -35,26 +35,41 @@ public class LocationController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                 
                 if let articlesFromJson = json["results"] as? [[String : AnyObject]] {
+                    // The entire JSON
                    // print(articlesFromJson)
                     
                     for articleFromJson in articlesFromJson {
                         let loc:Location;
                         
                         
-                        if let _ = articleFromJson["SEARCHVAL"] as? String, let lat = articleFromJson["LATITUDE"] as? String, let long = articleFromJson["LONGTITUDE"] as? String{
+                        if let placename = articleFromJson["SEARCHVAL"] as? String, let lat = articleFromJson["LATITUDE"] as? String, let long = articleFromJson["LONGTITUDE"] as? String, let BlockNum = articleFromJson["BLK_NO"] as? String,
+                            let RoadNum = articleFromJson["ROAD_NAME"] as? String, let Building = articleFromJson["BUILDING"] as? String {
+                            // To select the specific value
                             
                             let latDouble = Double(lat);
                             let longDouble = Double(long);
                             
-                            loc = Location(latitude: latDouble!, longtitude: longDouble!, address:Location.Address(name: "", blockNum: "", roadName: "", building: ""));
+                            
+                            loc = Location(latitude: latDouble!, longtitude: longDouble!, address:Location.Address(name: placename, blockNum: BlockNum, roadName: RoadNum, building: Building));
                             
                             locations.append(loc);
+                            // push the selected value into the array
+                            completionHandler(locations)
                             print("===================");
                             print(loc.latitude);
                             print("===================");
                             print(loc.longtitude);
                             print("===================");
                             print(loc.locationAddress.name);
+                            print("===================");
+                            print("===================");
+                            print(loc.locationAddress.blockNum);
+                            print("===================");
+                            print("===================");
+                            print(loc.locationAddress.roadName);
+                            print("===================");
+                            print("===================");
+                            print(loc.locationAddress.building);
                             print("===================");
                             //place.locationplace = places    // same name as the name in the class
                             //place.lat = lat
