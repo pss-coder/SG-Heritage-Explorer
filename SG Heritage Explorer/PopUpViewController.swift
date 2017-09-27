@@ -25,7 +25,6 @@ class PopUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         view.addGestureRecognizer(tap)
-        
         view.isUserInteractionEnabled = true
         
     }
@@ -84,13 +83,24 @@ class PopUpViewController: UIViewController {
     //Start Quiz action
     @IBAction func startquizBtnAction(_ sender: Any) {
        
-       
-        let vc = PopUpViewController()
-        vc.text = labelDisplay.text
+      // let LocationValue = labelDisplay.text
+        performSegue(withIdentifier: "toQuizViewController", sender: nil)
         
-        navigationController?.pushViewController(vc, animated: true)
-        
-           }
+    }
+    
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // == Storyboard ID 
+        if (segue.identifier == "toQuizViewController"){
+            if let destination = segue.destination as? QuizViewController {
+                
+                destination.passedTitle = labelDisplay.text;
+                    //sender as? String
+                
+            }
+        }
+    }
     
 
 }
