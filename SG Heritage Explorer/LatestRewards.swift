@@ -12,8 +12,6 @@ import UIKit
 
    //Properties
     @IBInspectable var rewardsSize:CGSize = CGSize(width: 80.0, height: 10.0){
-    
-    
     didSet {
     
        setupButtons()
@@ -42,6 +40,8 @@ import UIKit
         setupButtons()
     }
     
+    
+    
     required init(coder: NSCoder) {
         super.init(coder: coder)
         setupButtons()
@@ -50,22 +50,22 @@ import UIKit
     
     //Private functions 
     private func setupButtons() {
-        
-        ImageArray.removeAll()
-        
-        
-//        //Images 
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
-//        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-//        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-//        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-//        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
-//        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+//        
+//        ImageArray.removeAll()
+//        
+//        
+////        //Images 
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+//        ImageArray.append(#imageLiteral(resourceName: "UniversalStudios.png"))
+////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
+////        ImageArray.append(#imageLiteral(resourceName: "directionsIcon"))
         
         //Clear the existing button in the array 
         //Clear the existing button in the array
@@ -85,19 +85,25 @@ import UIKit
 
        
         
-        for i in 0..<4{
+        for _ in 0..<4{
             
             //Create UI Button
             let Rewards = UIButton()
-            //Rewards.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+            Rewards.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
             
             //Set Button Images
-            Rewards.setImage(UIImage(named:"UniversalStudios.png"), for: .normal)
+            
+            
+            let bundle = Bundle(for: type(of: self))
+         //   let RewardsImage = UIImage(named: "UniversalStudios", in: bundle, compatibleWith: self.traitCollection)
             
             //Add Contraints
             Rewards.translatesAutoresizingMaskIntoConstraints = false
             Rewards.heightAnchor.constraint(equalToConstant: rewardsSize.height).isActive = true
             Rewards.widthAnchor.constraint(equalToConstant: rewardsSize.width).isActive = true
+            
+            //Rewards.setImage(RewardsImage, for: .normal)
+
             
             
             //Setup the button action

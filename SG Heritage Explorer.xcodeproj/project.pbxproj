@@ -11,6 +11,9 @@
 		112D7CB11F7B7C5800FB5E00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */; };
 		112D7CB31F7B7FB900FB5E00 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */; };
 		11C5CED11F795A0D00CCB8A1 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5CED01F795A0D00CCB8A1 /* LocationData.swift */; };
+		1DBD43541F7B94B0006C9B13 /* LatestRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */; };
+		1DBD43591F7B94BB006C9B13 /* WildWildWet.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBD43561F7B94BB006C9B13 /* WildWildWet.png */; };
+		1DBD435A1F7B94BB006C9B13 /* Zoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBD43571F7B94BB006C9B13 /* Zoo.png */; };
 		251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33ED1F77FE4C0011B98B /* AppDelegate.swift */; };
 		251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251E33EF1F77FE4C0011B98B /* ViewController.swift */; };
 		251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251E33F11F77FE4C0011B98B /* Main.storyboard */; };
@@ -28,7 +31,6 @@
 		25773DF41F7A4FEA003D7A9F /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */; };
 		25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E28C631F7977B4009C254E /* AppUtilities.swift */; };
 		25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C691F7A1EA0009C254E /* Assets.xcassets */; };
-		25E28C701F7A2249009C254E /* turn-right (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 25E28C6F1F7A2249009C254E /* turn-right (1).png */; };
 		45E110DB39A9F2F6DD858BFD /* Pods_SG_Heritage_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8EC942537505860B083C07 /* Pods_SG_Heritage_Explorer.framework */; };
 		8AD2F627ACA3B3AD5E9A419F /* Pods_SG_Heritage_ExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C06E26D150DE73A487BCD8 /* Pods_SG_Heritage_ExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,9 @@
 		112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		11C5CED01F795A0D00CCB8A1 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestRewards.swift; sourceTree = "<group>"; };
+		1DBD43561F7B94BB006C9B13 /* WildWildWet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WildWildWet.png; sourceTree = "<group>"; };
+		1DBD43571F7B94BB006C9B13 /* Zoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zoo.png; sourceTree = "<group>"; };
 		251E33EA1F77FE4C0011B98B /* SG Heritage Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SG Heritage Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		251E33ED1F77FE4C0011B98B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251E33EF1F77FE4C0011B98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +74,6 @@
 		25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		25E28C631F7977B4009C254E /* AppUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
 		25E28C691F7A1EA0009C254E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		25E28C6F1F7A2249009C254E /* turn-right (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turn-right (1).png"; sourceTree = "<group>"; };
 		25E4DF8D1F7B7C7D001692EF /* raffleplace.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = raffleplace.gpx; sourceTree = "<group>"; };
 		25E4DF8E1F7B7C90001692EF /* botanicgarden.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = botanicgarden.gpx; sourceTree = "<group>"; };
 		43BBC929AA6EDF465A22ED0E /* Pods-SG Heritage Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG Heritage Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG Heritage Explorer/Pods-SG Heritage Explorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +116,7 @@
 		1D4E16C51F7ABAA300F24DB1 /* Custom Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D4E16C61F7ABB3600F24DB1 /* LatestRewards.swift */,
+				1DBD43531F7B94B0006C9B13 /* LatestRewards.swift */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -144,9 +148,6 @@
 		251E33EC1F77FE4C0011B98B /* SG Heritage Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				1DF509061F7B79B000D831C9 /* UniversalStudios.png */,
-				1DF509071F7B79B000D831C9 /* WildWildWet.png */,
-				1DF509081F7B79B000D831C9 /* Zoo.png */,
 				1D4E16C51F7ABAA300F24DB1 /* Custom Controllers */,
 				251E34131F7814B50011B98B /* Storyboard */,
 				251E34141F7814C30011B98B /* View Controllers */,
@@ -194,7 +195,6 @@
 		251E34141F7814C30011B98B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
 				25773DF31F7A4FEA003D7A9F /* PopUpViewController.swift */,
 				25773DF11F7A4FB7003D7A9F /* RewardsViewController.swift */,
 				251E33EF1F77FE4C0011B98B /* ViewController.swift */,
@@ -225,7 +225,8 @@
 		25B569D01F7B6C1A001C760F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				25E28C6F1F7A2249009C254E /* turn-right (1).png */,
+				1DBD43561F7B94BB006C9B13 /* WildWildWet.png */,
+				1DBD43571F7B94BB006C9B13 /* Zoo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -342,13 +343,11 @@
 			files = (
 				251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */,
 				253268C71F78C8F400F0FBBB /* test.gpx in Resources */,
-				1DF5090A1F7B79B000D831C9 /* WildWildWet.png in Resources */,
+				1DBD43591F7B94BB006C9B13 /* WildWildWet.png in Resources */,
 				251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */,
-				1DF509091F7B79B000D831C9 /* UniversalStudios.png in Resources */,
 				253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */,
-				1DF5090B1F7B79B000D831C9 /* Zoo.png in Resources */,
+				1DBD435A1F7B94BB006C9B13 /* Zoo.png in Resources */,
 				25E28C6A1F7A1EA0009C254E /* Assets.xcassets in Resources */,
-				25E28C701F7A2249009C254E /* turn-right (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +480,7 @@
 				11C5CED11F795A0D00CCB8A1 /* LocationData.swift in Sources */,
 				251E33F01F77FE4C0011B98B /* ViewController.swift in Sources */,
 				25E28C641F7977B4009C254E /* AppUtilities.swift in Sources */,
+				1DBD43541F7B94B0006C9B13 /* LatestRewards.swift in Sources */,
 				251E33EE1F77FE4C0011B98B /* AppDelegate.swift in Sources */,
 				25773DF41F7A4FEA003D7A9F /* PopUpViewController.swift in Sources */,
 				251E34181F7815210011B98B /* Quiz.swift in Sources */,
