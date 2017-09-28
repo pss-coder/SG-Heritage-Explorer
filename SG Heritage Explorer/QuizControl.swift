@@ -48,7 +48,11 @@ import UIKit
         //True Button
         //Create UI Button
        
-        True.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+        //True.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+        True.backgroundColor = .clear
+        True.layer.cornerRadius = 5
+        True.layer.borderWidth = 1
+        True.layer.borderColor = UIColor.white.cgColor
         True.setTitle("True", for: .normal)
         //Add Contraints
         True.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +69,10 @@ import UIKit
         //False Button
         //Create Button
         
-        False.backgroundColor = UIColor.red
+        False.backgroundColor = .clear
+        False.layer.cornerRadius = 5
+        False.layer.borderWidth = 1
+        False.layer.borderColor = UIColor.white.cgColor
         False.setTitle("False", for: .normal)
         
         //Constraints

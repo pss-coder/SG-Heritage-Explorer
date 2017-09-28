@@ -86,7 +86,8 @@ class PopUpViewController: UIViewController {
     @IBAction func startquizBtnAction(_ sender: Any) {
        
       // let LocationValue = labelDisplay.text
-        performSegue(withIdentifier: "toQuizViewController", sender: nil)
+        //self.navigationController?.pushViewController(popupViewController, animated: true)
+       performSegue(withIdentifier: "toQuizViewController", sender: nil)
         
     }
     
