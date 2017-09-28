@@ -9,13 +9,15 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
+    
+    
 
     //MARK: Properties
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var labelDisplay: UILabel!//remove this later,just for testing
     
-     var text:String! = ""
-    
+     var text:String! = "";
+    var selectedHeritage:Heritage = Heritage(name: "", description: "",location: Location(latitude: 0, longtitude: 0,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
     
     
     

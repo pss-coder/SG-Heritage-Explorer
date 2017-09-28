@@ -2,6 +2,7 @@ PODS:
   - Mapbox-iOS-SDK (3.6.3)
   - MapboxDirections.swift (0.10.5):
     - Polyline (~> 4.1)
+  - MapboxGeocoder.swift (0.6.3)
   - Polyline (4.1.1)
   - SwiftLocation (2.0.7)
   - UICircularProgressRing (1.7.2)
@@ -9,16 +10,18 @@ PODS:
 DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 3.6)
   - MapboxDirections.swift (~> 0.10)
+  - MapboxGeocoder.swift (~> 0.6)
   - SwiftLocation
   - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 27805cb5f36d2bffe732b1d392278f4e408d06d2
   MapboxDirections.swift: b080e7c7085fb4d0f34bdd99528b170b6309bc21
+  MapboxGeocoder.swift: fbd6f0f79eda6d0b714a36259c5ff5dcd72c1bf1
   Polyline: 381d1e699fd12508f97cfc468478dfbab67edf1f
   SwiftLocation: 1fe2e15a5812e961496e82eeaca71d03e829e47a
   UICircularProgressRing: 733ba68896727d8e658c4bf9a6a1093290396e15
 
-PODFILE CHECKSUM: 0e26091c91c34ea47cc4e8154ea58dd0e41e7f5b
+PODFILE CHECKSUM: 851d510623724672244fa21e57b950aaff7523fb
 
 COCOAPODS: 1.3.1
