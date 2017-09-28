@@ -61,20 +61,23 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         setGeoFencingFor(Heritages: LoadHeritages())
        
         //LocationData.fetchPlaces(search: "Merlion Park");
-        //LocationController.retrieveLocations(search: "Merlion Park");
+//        LocationController.retrieveLocations(search: "Merlion Park");
         
-//        for loc in LocationController.locations
-//        {
-//            print("===================");
-//            print(loc.latitude);
-//            print("===================");
-//            print(loc.longtitude);
-//            print("===================");
-//            print(loc.locationAddress.name);
-//            print("===================");
-//            
-//        }
+        LocationController.retrieveLocations(search: "merlion park"){
+            genres in
+            print("Lat: \(genres[0].latitude) ")
+            print("Long: \(genres[0].longtitude)")
+            
+            LocationController.retrievePlace(lat: genres[0].latitude,long:genres[0].longtitude){
+                genres in
+                print("Road: \(genres[0].locationAddress.roadName) ")
+                
+            }
+        }
         
+        
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
