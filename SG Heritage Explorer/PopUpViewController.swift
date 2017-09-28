@@ -9,13 +9,15 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
+    
+    
 
     //MARK: Properties
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var labelDisplay: UILabel!//remove this later,just for testing
     
-    
-    
+     var text:String! = "";
+    var selectedHeritage:Heritage = Heritage(name: "", description: "",location: Location(latitude: 0, longtitude: 0,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
     
     
     
@@ -23,6 +25,19 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+        
+    }
+    
+    // function which is triggered when handleTap is called
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        print("Hello World")
+        if sender.view != popUpView
+        {
+            self.dismiss(animated: true, completion: nil);
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,17 +60,18 @@ class PopUpViewController: UIViewController {
     /**
      Any tap outside of the popup view will dimiss the popup
      */
-    override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
-        let touch: UITouch? = touches.first;
-        //location is relative to the current view
-        // do something with the touched point
-        if touch?.view != popUpView {
-            //popUpView.isHidden = true
-            
-            
-            self.dismiss(animated: true, completion: nil);
-        }
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) {
+//        let touch: UITouch? = touches.first;
+//        //location is relative to the current view
+//        // do something with the touched point
+////        if touch?.view != popUpView {
+////            //popUpView.isHidden = true
+////            self.dismiss(animated: true, completion: nil);
+////           
+////        }
+//        //self.popUpView.isHidden = true;
+//        self.dismiss(animated: false, completion: nil);
+//    }
     
     
     
@@ -65,5 +81,28 @@ class PopUpViewController: UIViewController {
     @IBAction func dismissBtnAction(_ sender: Any) {
         dismiss(animated: true, completion: nil);
     }
+    
+    //Start Quiz action
+    @IBAction func startquizBtnAction(_ sender: Any) {
+       
+      // let LocationValue = labelDisplay.text
+        performSegue(withIdentifier: "toQuizViewController", sender: nil)
+        
+    }
+    
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // == Storyboard ID 
+        if (segue.identifier == "toQuizViewController"){
+            if let destination = segue.destination as? QuizViewController {
+                
+                destination.passedTitle = labelDisplay.text;
+                    //sender as? String
+                
+            }
+        }
+    }
+    
 
 }

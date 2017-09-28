@@ -10,6 +10,7 @@ target 'SG Heritage Explorer' do
         pod 'MapboxDirections.swift', '~> 0.10'
 	pod 'Mapbox-iOS-SDK', '~> 3.6'
 	pod 'UICircularProgressRing'
+	pod 'MapboxGeocoder.swift', '~> 0.6'
 
   target 'SG Heritage ExplorerTests' do
     inherit! :search_paths
