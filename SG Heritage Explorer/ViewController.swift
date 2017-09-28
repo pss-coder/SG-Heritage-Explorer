@@ -179,29 +179,23 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         }
     }
     
+//MARK: TAP GESTURE FUNCTIONS
+//========================================  TAP GESTURES FUNCTIONS  ================================
     func handleSingleTap(tap: UITapGestureRecognizer) {
-        
-        
         for ann in mapView.annotations!
         {
             if let tappedannotation = ann as? TappedLocationAnnotation
             {
-                mapView.removeAnnotation(tappedannotation)
-                
+                mapView.removeAnnotation(tappedannotation);
             }
-            
-            
         }
         
         // let location = gestureReconizer.location(in: mapView)
         // let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
-        
         // Convert tap location (CGPoint)
         // to geographic coordinate (CLLocationCoordinate2D).
         let tapCoordinate: CLLocationCoordinate2D = mapView.convert(tap.location(in: mapView), toCoordinateFrom: mapView)
-        
         let geocoder = Geocoder.shared;
-        
         let options = ReverseGeocodeOptions(coordinate: CLLocationCoordinate2D(latitude: tapCoordinate.latitude, longitude: tapCoordinate.longitude))
         // Or perhaps: ReverseGeocodeOptions(location: locationManager.location)
         
@@ -237,7 +231,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     func longPressed(sender: UILongPressGestureRecognizer)
     {
-        print("longpressed")
         for ann in mapView.annotations!
         {
             if let tappedannotation = ann as? TappedLocationAnnotation
@@ -248,13 +241,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             
             
         }
-        //Different code
     }
-    
-    
-    
-    
-    
+
 //===================================  MAPBOX DELEGATES  ================================
     
         //MARK: Annotation Callout
