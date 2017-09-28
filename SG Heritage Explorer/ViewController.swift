@@ -47,20 +47,19 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         LocationController.retrieveLocations(search: "merlion park"){
             genres in
-            print("View Controller: \(genres[0].latitude)")
+            print("Lat: \(genres[0].latitude) ")
+            print("Long: \(genres[0].longtitude)")
+            
+            LocationController.retrievePlace(lat: genres[0].latitude,long:genres[0].longtitude){
+                genres in
+                print("Road: \(genres[0].locationAddress.roadName) ")
+                
+            }
         }
-//        for loc in LocationController.locations
-//        {
-//            print("===================");
-//            print(loc.latitude);
-//            print("===================");
-//            print(loc.longtitude);
-//            print("===================");
-//            print(loc.locationAddress.name);
-//            print("===================");
-//            
-//        }
         
+        
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
