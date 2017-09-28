@@ -10,19 +10,13 @@
 		112D7CAF1F7B77D200FB5E00 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CAE1F7B77D200FB5E00 /* Place.swift */; };
 		112D7CB11F7B7C5800FB5E00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */; };
 		112D7CB31F7B7FB900FB5E00 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */; };
-		1D0FC2841F7D627600815EB9 /* Screen Shot 2017-09-29 at 1.00.59 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC2831F7D627600815EB9 /* Screen Shot 2017-09-29 at 1.00.59 AM.png */; };
 		1D0FC2861F7D647300815EB9 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC2851F7D647300815EB9 /* defaultPhoto.png */; };
-		1D0FC2881F7D653200815EB9 /* Screen Shot 2017-09-29 at 1.12.54 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC2871F7D653200815EB9 /* Screen Shot 2017-09-29 at 1.12.54 AM.png */; };
-		1D0FC28A1F7D66FD00815EB9 /* Screen Shot 2017-09-29 at 1.20.27 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC2891F7D66FD00815EB9 /* Screen Shot 2017-09-29 at 1.20.27 AM.png */; };
 		1D0FC28E1F7D698C00815EB9 /* house-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC28D1F7D698C00815EB9 /* house-icon.png */; };
 		1D2CED8C1F7CBA170084623C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2CED8B1F7CBA170084623C /* ResultsViewController.swift */; };
 		1D2CED941F7D0D0E0084623C /* heritage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2CED931F7D0D0E0084623C /* heritage.png */; };
-		1D2CED961F7D0F9C0084623C /* Screen Shot 2017-09-28 at 7.07.25 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2CED951F7D0F9C0084623C /* Screen Shot 2017-09-28 at 7.07.25 PM.png */; };
 		1D2E6B561F7BB849009ECD2C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E6B551F7BB849009ECD2C /* LocationController.swift */; };
 		1D2E6B581F7BCD55009ECD2C /* QuizControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E6B571F7BCD55009ECD2C /* QuizControl.swift */; };
 		1D4D63691F7D6DEA005AE98D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D63681F7D6DEA005AE98D /* Assets.xcassets */; };
-		1D4D636B1F7D6F38005AE98D /* Screen Shot 2017-09-29 at 1.55.38 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D636A1F7D6F38005AE98D /* Screen Shot 2017-09-29 at 1.55.38 AM.png */; };
-		1D4D636F1F7D7283005AE98D /* Screen Shot 2017-09-29 at 2.09.34 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D636E1F7D7283005AE98D /* Screen Shot 2017-09-29 at 2.09.34 AM.png */; };
 		1D4D63711F7D73B0005AE98D /* UserIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D63701F7D73B0005AE98D /* UserIcon.png */; };
 		1D513DF01F7C1A0400538D65 /* PictureQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D513DEF1F7C1A0400538D65 /* PictureQuizViewController.swift */; };
 		1DA66BD71F7BA48100D9C385 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */; };
@@ -63,19 +57,13 @@
 		112D7CAE1F7B77D200FB5E00 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
-		1D0FC2831F7D627600815EB9 /* Screen Shot 2017-09-29 at 1.00.59 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-29 at 1.00.59 AM.png"; sourceTree = "<group>"; };
 		1D0FC2851F7D647300815EB9 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
-		1D0FC2871F7D653200815EB9 /* Screen Shot 2017-09-29 at 1.12.54 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-29 at 1.12.54 AM.png"; sourceTree = "<group>"; };
-		1D0FC2891F7D66FD00815EB9 /* Screen Shot 2017-09-29 at 1.20.27 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-29 at 1.20.27 AM.png"; sourceTree = "<group>"; };
 		1D0FC28D1F7D698C00815EB9 /* house-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-icon.png"; sourceTree = "<group>"; };
 		1D2CED8B1F7CBA170084623C /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		1D2CED931F7D0D0E0084623C /* heritage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heritage.png; sourceTree = "<group>"; };
-		1D2CED951F7D0F9C0084623C /* Screen Shot 2017-09-28 at 7.07.25 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-28 at 7.07.25 PM.png"; sourceTree = "<group>"; };
 		1D2E6B551F7BB849009ECD2C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		1D2E6B571F7BCD55009ECD2C /* QuizControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizControl.swift; sourceTree = "<group>"; };
 		1D4D63681F7D6DEA005AE98D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "SG Heritage Explorer/Assets.xcassets"; sourceTree = "<group>"; };
-		1D4D636A1F7D6F38005AE98D /* Screen Shot 2017-09-29 at 1.55.38 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-29 at 1.55.38 AM.png"; sourceTree = "<group>"; };
-		1D4D636E1F7D7283005AE98D /* Screen Shot 2017-09-29 at 2.09.34 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-09-29 at 2.09.34 AM.png"; sourceTree = "<group>"; };
 		1D4D63701F7D73B0005AE98D /* UserIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserIcon.png; sourceTree = "<group>"; };
 		1D513DEF1F7C1A0400538D65 /* PictureQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureQuizViewController.swift; sourceTree = "<group>"; };
 		1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -258,14 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				1D4D63701F7D73B0005AE98D /* UserIcon.png */,
-				1D4D636E1F7D7283005AE98D /* Screen Shot 2017-09-29 at 2.09.34 AM.png */,
-				1D4D636A1F7D6F38005AE98D /* Screen Shot 2017-09-29 at 1.55.38 AM.png */,
 				1D0FC28D1F7D698C00815EB9 /* house-icon.png */,
-				1D0FC2891F7D66FD00815EB9 /* Screen Shot 2017-09-29 at 1.20.27 AM.png */,
-				1D0FC2871F7D653200815EB9 /* Screen Shot 2017-09-29 at 1.12.54 AM.png */,
 				1D0FC2851F7D647300815EB9 /* defaultPhoto.png */,
-				1D0FC2831F7D627600815EB9 /* Screen Shot 2017-09-29 at 1.00.59 AM.png */,
-				1D2CED951F7D0F9C0084623C /* Screen Shot 2017-09-28 at 7.07.25 PM.png */,
 				1D2CED931F7D0D0E0084623C /* heritage.png */,
 				1DBD43561F7B94BB006C9B13 /* WildWildWet.png */,
 				1DBD43571F7B94BB006C9B13 /* Zoo.png */,
@@ -385,20 +367,14 @@
 			files = (
 				1D2CED941F7D0D0E0084623C /* heritage.png in Resources */,
 				1D4D63711F7D73B0005AE98D /* UserIcon.png in Resources */,
-				1D0FC2881F7D653200815EB9 /* Screen Shot 2017-09-29 at 1.12.54 AM.png in Resources */,
-				1D4D636F1F7D7283005AE98D /* Screen Shot 2017-09-29 at 2.09.34 AM.png in Resources */,
 				1D0FC2861F7D647300815EB9 /* defaultPhoto.png in Resources */,
-				1D0FC2841F7D627600815EB9 /* Screen Shot 2017-09-29 at 1.00.59 AM.png in Resources */,
 				1D4D63691F7D6DEA005AE98D /* Assets.xcassets in Resources */,
 				251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */,
 				253268C71F78C8F400F0FBBB /* test.gpx in Resources */,
-				1D0FC28A1F7D66FD00815EB9 /* Screen Shot 2017-09-29 at 1.20.27 AM.png in Resources */,
 				1DBD43591F7B94BB006C9B13 /* WildWildWet.png in Resources */,
 				1D0FC28E1F7D698C00815EB9 /* house-icon.png in Resources */,
 				251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */,
-				1D2CED961F7D0F9C0084623C /* Screen Shot 2017-09-28 at 7.07.25 PM.png in Resources */,
 				253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */,
-				1D4D636B1F7D6F38005AE98D /* Screen Shot 2017-09-29 at 1.55.38 AM.png in Resources */,
 				1DBD435A1F7B94BB006C9B13 /* Zoo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
