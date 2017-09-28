@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MapboxGeocoder.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SG Heritage Explorer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62F60F472DBAD7D6528940E28E438065</key>
+		<key>5A3FB5934C61A084670B020AFE16D8AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDBD749E714BFB6076DC3812481A89D8</key>
+		<key>ADEB1AFB20C6D60A040602C8D3ABBFF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F03296198ABF3F24503BBA65BA929669</key>
+		<key>F3B0D303D1E2FEEE382F99CB69B2053C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9DC5C0C5C9673FEFED5008CB7C9B233</key>
 		<dict>
 			<key>primary</key>
 			<true/>

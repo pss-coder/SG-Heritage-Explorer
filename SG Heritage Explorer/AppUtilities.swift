@@ -23,5 +23,7 @@ public class AppUtilities
         notification.soundName = "Default"
         UIApplication.shared.presentLocalNotificationNow(notification)
     }
+    
+    
 
 }

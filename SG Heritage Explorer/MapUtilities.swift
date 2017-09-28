@@ -14,6 +14,7 @@ import SwiftLocation;
 
 public class MapUtilities{
 
+    static var isRouteSet = 0;
 
     /**
      
@@ -48,8 +49,7 @@ public class MapUtilities{
     }
     
     
-     static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)
-    {
+    static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)    {
         //          let waypoints = [
         //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.286789, longitude: 103.854501), name: "Merlion Park"),
         //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965), name: "House"),
@@ -59,6 +59,10 @@ public class MapUtilities{
         let options = RouteOptions(waypoints: waypoints, profileIdentifier: .automobileAvoidingTraffic)
         options.includesSteps = true
         let directions = Directions.shared;
+        
+        var routeLine:routePolyLine = routePolyLine();
+        var routeCoordinates:[CLLocationCoordinate2D] = [];
+        
         
         _ = directions.calculate(options) { (waypoints, routes, error) in
             guard error == nil else {
@@ -85,14 +89,20 @@ public class MapUtilities{
                 if route.coordinateCount > 0
                 {
                     // Convert the route’s coordinates into a polyline.
-                    var routeCoordinates = route.coordinates!
-                    let routeLine = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                     routeCoordinates = route.coordinates!
+                     routeLine = routePolyLine(coordinates: &routeCoordinates, count: route.coordinateCount)
+                
+                    routeLine.isRouteSet = 1;
+                    
                     
                    // return routeCoordinates;
                     
                     // Add the polyline to the map and fit the viewport to the polyline.
+                    isRouteSet = 1;
                     mapView.addAnnotation(routeLine)
                     mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
+                   
+                   
                     
                 }
                 //else {return nil;}
@@ -101,10 +111,13 @@ public class MapUtilities{
             
         }
         //return nil;
+        //routePolyLine = routeLine;
+        //return (routeLine,routeCoordinates);
+
     }//end route method
     
     
-    static func CreateGeoFence(forRegion:CLCircularRegion,onView:UIViewController)
+    static func CreateGeoFence(forRegion:CLCircularRegion,onView:UIViewController,mapView:MGLMapView)
     {
         //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
         //let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: 500, identifier: "Merlion Park");
@@ -117,12 +130,13 @@ public class MapUtilities{
             
             try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
                 print("Entered in region! \(forRegion.identifier) ")
-                AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
-                
+                  AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
+                displaySelectedAnnotation(mapView: mapView, annotationIdentifer: forRegion.identifier)
                 
             }, exit: { _ in
                 print("Exited from the region \(forRegion.identifier)")
                 AppUtilities.showAlert(view:onView,title: "Exitted", message: "Bye \(forRegion.identifier)")
+                
                 
             }, error: { req, error in
                 print("An error has occurred \(error)")
@@ -133,5 +147,23 @@ public class MapUtilities{
         }
         
     }
+    
+    static func displaySelectedAnnotation(mapView:MGLMapView,annotationIdentifer:String)
+    {
+        //print("display \(annotation.title)");
+        
+        for annotation in mapView.annotations!
+        {
+            if annotation.title! == annotationIdentifer
+            {
+                mapView.selectAnnotation(annotation, animated: true);
+            }
+        }
+    }
 
+}
+
+public class routePolyLine : MGLPolyline
+{
+     var isRouteSet:Int = 0;
 }
