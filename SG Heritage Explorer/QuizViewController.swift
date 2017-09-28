@@ -13,6 +13,12 @@ class QuizViewController: UIViewController {
     //properties
     var passedTitle:String!
     
+    var SavedQuestion = ""
+    
+    var SavedUseranswer = ""
+    
+    var SavedCorrectanswer = ""
+    
     @IBOutlet weak var QuestionLabel: UILabel!
     
     @IBOutlet weak var quizControl: QuizControl!
@@ -29,10 +35,9 @@ class QuizViewController: UIViewController {
         quizControl.True.addTarget(self, action: #selector(QuizViewController.truebuttonPressed(button:)), for: .touchUpInside)
         //Setting up the button action for the quiz control false button
         quizControl.False.addTarget(self, action: #selector(QuizViewController.falsebuttonPressed(button:)), for: .touchUpInside)
-
-    
         
- }
+        
+         }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,12 +49,41 @@ class QuizViewController: UIViewController {
     func truebuttonPressed(button: UIButton){
         print("True Button Clicked")
         QuestionAnswers(User: "True")
+        
+        //Navigating to Picture Quiz 
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let PicController = storyboard.instantiateViewController(withIdentifier: "PicQuiz") as! PictureQuizViewController
+        self.present(PicController, animated: true, completion: nil)
+        
+        //Save all the results and pass it the next quiz
+        PicController.Quiz1Question = SavedQuestion
+        PicController.Quiz1Useranswer = SavedUseranswer
+        PicController.Quiz1Correctanswer = SavedCorrectanswer
+        
+
+    
+        
+        
+        
     }
     
     //False button action click
     func falsebuttonPressed(button: UIButton){
         print("False button Clicked")
         QuestionAnswers(User: "False")
+        
+        //Navigating to Picture Quiz
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let PicController = storyboard.instantiateViewController(withIdentifier: "PicQuiz") as! PictureQuizViewController
+        self.present(PicController, animated: true, completion: nil)
+        
+        //Save all the results and pass it the Picture quiz
+        PicController.Quiz1Question = SavedQuestion
+        PicController.Quiz1Useranswer = SavedUseranswer
+        PicController.Quiz1Correctanswer = SavedCorrectanswer
+
+        
+
     }
     
     
@@ -69,6 +103,12 @@ class QuizViewController: UIViewController {
                 print("Wrong")
             }
             
+            
+            //Save all the results
+            SavedQuestion = quiz1.Questions
+            SavedUseranswer = User
+            SavedCorrectanswer = quiz1.CorrectAnswer
+            
         }
         else if(passedTitle == "Raffles Statue"){
             
@@ -82,6 +122,10 @@ class QuizViewController: UIViewController {
                 print("Wrong")
             }
             
+            //Save all the results
+            SavedQuestion = quiz1.Questions
+            SavedUseranswer = User
+            SavedCorrectanswer = quiz1.CorrectAnswer
             
         }
         else if (passedTitle == "Singapore Botanic Gardens") {
@@ -96,7 +140,10 @@ class QuizViewController: UIViewController {
                 print("Wrong")
             }
             
-            
+            //Save all the results
+            SavedQuestion = quiz1.Questions
+            SavedUseranswer = User
+            SavedCorrectanswer = quiz1.CorrectAnswer
             
             
         }
