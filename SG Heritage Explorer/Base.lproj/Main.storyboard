@@ -29,7 +29,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yER-mg-OSo">
-                                                <rect key="frame" x="46" y="39" width="85" height="30"/>
+                                                <rect key="frame" x="46" y="173" width="85" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Rewards"/>
                                                 <connections>
@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-748"/>
+            <point key="canvasLocation" x="904.79999999999995" y="-748.87556221889065"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="VIl-ja-TJl">
@@ -206,7 +206,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-2C-eWl" customClass="QuizControl" customModule="SG_Heritage_Explorer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="549" width="343" height="110"/>
+                                <rect key="frame" x="16" y="598" width="343" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
@@ -220,6 +220,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meq-90-AJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1480.8" y="839.73013493253382"/>
+        </scene>
+        <!--Picture Quiz View Controller-->
+        <scene sceneID="hk3-LP-goF">
+            <objects>
+                <viewController storyboardIdentifier="PicQuiz" id="g85-rL-124" customClass="PictureQuizViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xI9-Ob-2tG"/>
+                        <viewControllerLayoutGuide type="bottom" id="yi7-jP-ZTG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xS9-ID-CWA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-MT-68I">
+                                <rect key="frame" x="16" y="581" width="343" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="PhotoButtonAction:" destination="g85-rL-124" eventType="touchUpInside" id="QpN-tv-Xyx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MaK-nL-Yju">
+                                <rect key="frame" x="16" y="139" width="343" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="MaK-nL-Yju" id="z13-LW-9yq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ru6-m9-eL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2572" y="846.9265367316342"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="Sqm-tG-QzJ">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="MNZ-Rz-cse" customClass="ResultsViewController" customModule="SG_Heritage_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EWt-c1-wBb"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZYT-Ei-51z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ikp-i7-eIw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVk-g3-K6M">
+                                <rect key="frame" x="8" y="106" width="359" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LL1-Rk-thb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.5999999999999" y="837.93103448275872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kPd-Sy-SAH">
@@ -252,35 +317,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdi-FM-Jyt">
-                                <rect key="frame" x="67" y="203" width="240" height="260"/>
+                                <rect key="frame" x="114" y="250" width="170" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MH-CV-6Kk">
-                                        <rect key="frame" x="12" y="32" width="216" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MH-CV-6Kk">
+                                        <rect key="frame" x="-23" y="38" width="216" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-RQ-GrZ">
-                                        <rect key="frame" x="56" y="188" width="114" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHq-RQ-GrZ">
+                                        <rect key="frame" x="152" y="8" width="10" height="11"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Dimiss"/>
+                                        <state key="normal" image="cross"/>
                                         <connections>
                                             <action selector="dismissBtnAction:" destination="LVA-S7-MrD" eventType="touchUpInside" id="ivd-yF-m8W"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-og-JpF">
-                                        <rect key="frame" x="77" y="115" width="87" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-og-JpF">
+                                        <rect key="frame" x="35" y="67" width="101" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Start Quiz"/>
+                                        <state key="normal" title="Start Quiz" image="3D Circle.png"/>
                                         <connections>
                                             <action selector="startquizBtnAction:" destination="LVA-S7-MrD" eventType="touchUpInside" id="GiY-Xz-xBM"/>
                                             <segue destination="2ka-M4-nmt" kind="show" identifier="toQuizViewController" id="qSJ-7a-38h"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.62578543779999996" green="0.12570050860000001" blue="0.71831369980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
@@ -295,4 +360,8 @@
             <point key="canvasLocation" x="856.79999999999995" y="127.28635682158921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="3D Circle.png" width="1000" height="1000"/>
+        <image name="cross" width="64" height="64"/>
+    </resources>
 </document>
