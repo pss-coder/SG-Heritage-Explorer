@@ -12,6 +12,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBOutlet weak var tableview: UITableView!
+    
+    @IBOutlet weak var myInput: UITextField!
+    
     var places: [Place]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +26,21 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        fetchPlaces()
+//        fetchPlaces()
     }
     
+    @IBAction func pressedsearched(_ sender: Any) {
+//        fetchPlaces()
+    }
+    
+    
     func fetchPlaces(){
+//        
+//                var searchText: String
+//                searchText = (myInput.text?.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed))!
+//                let search:String = searchText.replacingOccurrences(of: "%20", with: " ")
+
         
-        print("FK UU ")
         let url = URL(string: "https://developers.onemap.sg/commonapi/search?searchVal=merlion&returnGeom=Y&getAddrDetails=Y".addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)!)!   //To pull data from web
         
         let task = URLSession.shared.dataTask(with: url) { (data,
