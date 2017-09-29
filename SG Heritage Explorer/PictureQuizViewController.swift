@@ -12,6 +12,7 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     //Properties 
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoButton: UIButton!
 
     public var Quiz1Question:String = "";
     public var Quiz1Useranswer:String = "";
@@ -21,6 +22,10 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        photoButton.backgroundColor = .clear
+        photoButton.layer.cornerRadius = 5
+        photoButton.layer.borderWidth = 1
+        photoButton.layer.borderColor = UIColor.white.cgColor
     
        
 

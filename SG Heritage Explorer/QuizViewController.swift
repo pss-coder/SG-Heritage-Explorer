@@ -19,12 +19,20 @@ class QuizViewController: UIViewController {
     
     var SavedCorrectanswer = ""
     
+    @IBOutlet weak var DescriptionBox: UIView!
+    
     @IBOutlet weak var QuestionLabel: UILabel!
     
     @IBOutlet weak var quizControl: QuizControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DescriptionBox.backgroundColor = .clear
+        DescriptionBox.layer.cornerRadius = 10
+        DescriptionBox.layer.borderWidth = 1
+        DescriptionBox.layer.borderColor = UIColor.white.cgColor
+        
         //Callig the function to set the questions based on the location title
         QuestionAnswers(User: "")
         
@@ -44,6 +52,7 @@ class QuizViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   
     
     //True button action click
     func truebuttonPressed(button: UIButton){
