@@ -11,7 +11,7 @@ import UIKit
  @IBDesignable class LatestRewards: UIStackView {
 
    //Properties
-    @IBInspectable var rewardsSize:CGSize = CGSize(width: 80.0, height: 10.0){
+    @IBInspectable var rewardsSize:CGSize = CGSize(width: 100.0, height: 10.0){
     didSet {
     
        setupButtons()
@@ -70,24 +70,24 @@ import UIKit
 
        
         
-        for _ in 0..<4{
+        for _ in 0..<3{
             
             //Create UI Button
             let Rewards = UIButton()
-            Rewards.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
+            //Rewards.backgroundColor = UIColor(red: 17.0/255.0, green: 119.0/255.0, blue: 151.0/255.0, alpha: 1.0)
             
             //Set Button Images
             
             
-            let bundle = Bundle(for: type(of: self))
-            let RewardsImage = UIImage(named: "UniversalStudios", in: bundle, compatibleWith: self.traitCollection)
+            //let bundle = Bundle(for: type(of: self))
+            //let RewardsImage = UIImage(named: "3D Circle" , in: bundle, compatibleWith: self.traitCollection)
             
             //Add Contraints
             Rewards.translatesAutoresizingMaskIntoConstraints = false
             Rewards.heightAnchor.constraint(equalToConstant: rewardsSize.height).isActive = true
             Rewards.widthAnchor.constraint(equalToConstant: rewardsSize.width).isActive = true
             
-            Rewards.setImage(RewardsImage, for: .normal)
+            //Rewards.setImage(RewardsImage, for: .normal)
 
             
             

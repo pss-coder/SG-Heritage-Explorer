@@ -12,6 +12,8 @@ import UICircularProgressRing
 
 class RewardsViewController: UIViewController {
 
+    //Properties
+    @IBOutlet weak var UserBox: UIView!
     
     //Create UICirluar view 
     //Make it Global
@@ -20,6 +22,11 @@ class RewardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Changing the view border 
+        UserBox.layer.cornerRadius = 10
+        UserBox.layer.borderWidth = 1
+       
         
         // Change any of the properties
         progressRing.maxValue = 100

@@ -10,7 +10,11 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    
     //properties
+    @IBOutlet weak var LocationDescription: UILabel!
+    @IBOutlet weak var LocationTitle: UILabel!
+    
     var passedTitle:String!
     
     var SavedQuestion = ""
@@ -110,8 +114,11 @@ class QuizViewController: UIViewController {
         if (passedTitle == "Merlion Park"){
             
             let quiz1 = Quiz(Questions: "Is there 7 merlions in Singapore?", CorrectAnswer: "False")
-            
+            LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
+            LocationDescription.text = "Merlion Park, is a Singapore landmark and major tourist attraction, located at One Fullerton, Singapore, near the Central Business District (CBD). The Merlion is a mythical creature with a lion's head and the body of a fish that is widely used as a mascot and national personification of Singapore. "
+            
+            
             
             if (quiz1.CorrectAnswer == User){
                 print("Correct")
@@ -130,7 +137,9 @@ class QuizViewController: UIViewController {
         else if(passedTitle == "Raffles Statue"){
             
             let quiz1 = Quiz(Questions: "Is the statue at Victoria memorial hall", CorrectAnswer: "True")
+            LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
+            LocationDescription.text = "The statue was the work of the famed British sculptor-cum-poet Thomas Woolner. The statue was unveiled by then Governor of the Straits Settlements Frederick Weld on 27 June 1887 on the occasion of Queen Victoria's Golden Jubilee. A little known detail was added by Woolner at the base of the statue. Here, he had traced a map depicting the area around the Straits of Malacca to symbolise Raffles having set foot on British Malaya."
             
             if (quiz1.CorrectAnswer == User){
                 print("Correct")
@@ -148,7 +157,9 @@ class QuizViewController: UIViewController {
         else if (passedTitle == "Singapore Botanic Gardens") {
             
             let quiz1 = Quiz(Questions: "Is Singapore Botanic Garden a UNESCO World heritage site?", CorrectAnswer: "True")
+            LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
+            LocationDescription.text = "The Singapore Botanic Gardens is a 158-year-old tropical garden located at the fringe of Singapore's Orchard Road shopping district. It is one of three gardens, and the only tropical garden, to be honoured as a UNESCO World Heritage Site. The Botanic Gardens has been ranked Asia's top park attraction since 2013, by TripAdvisor Travellers' Choice Awards."
             
             if (quiz1.CorrectAnswer == User){
                 print("Correct")
