@@ -27,7 +27,7 @@ public class Location
     var latitude:Double;
     var longtitude:Double;
     var locationAddress:Address
-    
+
     
     init(latitude:Double,longtitude:Double,address:Address)
     {

@@ -41,21 +41,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         locationManager.distanceFilter = kCLDistanceFilterNone;
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
-        
-        // Add a single tap gesture recognizer. This gesture requires the built-in MGLMapView tap gestures (such as those for zoom and annotation selection) to fail.
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(tap:)))
-        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
-            singleTap.require(toFail: recognizer)
-        }
-        let longtap = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(sender:)));
-        
-        for longrecognizer in mapView.gestureRecognizers! where longrecognizer is UILongPressGestureRecognizer{
-            longtap.require(toFail: longrecognizer);
-        }
-        
-        mapView.addGestureRecognizer(longtap);
-        mapView.addGestureRecognizer(singleTap)
-        
+
+        setGesturesForMapView();
         
         setAnnotationsFor(Heritages: LoadHeritages())
         setGeoFencingFor(Heritages: LoadHeritages())
@@ -72,7 +59,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     /**
      Displays OneMap Base Map into Map View.
-     This method also sets zoom level and displays user current location.
+     This function also sets zoom level and displays user current location.
      - Returns: no return value
      */
     private func DisplayOneMapBaseMap()
@@ -89,16 +76,15 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
         //Show User Current Locations
         mapView.showsUserLocation = true;
-         mapView.setUserTrackingMode(.followWithHeading, animated: false)
+        mapView.setUserTrackingMode(.followWithHeading, animated: true)
         
         let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
-
        mapView.setCenter(merlionParkLocation,zoomLevel: 12, animated: false);
         
     }
     
     /**
-     Method will Load Heritage from onemap API
+     Function will Load Heritage from onemap API
      */
     private func LoadHeritages() -> [Heritage]
     {
@@ -122,13 +108,11 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     }
     
     /**
-     Method will take in array of heritages and display onto map as Annotations.
+     Function will take in array of heritages and display onto map as Annotations.
      */
     private func setAnnotationsFor(Heritages:[Heritage])
     {
-        
         var heritageAnnotations:[HeritageAnnotation] = [];
-        
         for heritage in Heritages
         {
             let annotation = HeritageAnnotation();
@@ -138,7 +122,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             annotation.willUseImage = false;
             annotation.Heritage = heritage;
             annotation.imageName = heritage.name;
-            
             annotation.isNear = false;
             annotation.image = heritage.image;
             
@@ -150,7 +133,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     
     /**
-     Method will Set up geofencing for each Heritage Sites
+     Function will Set up geofencing for each Heritage Sites
      */
     private func setGeoFencingFor(Heritages:[Heritage])
     {
@@ -168,10 +151,42 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         }
     }
     
+    /**
+     Function will set Single and Long tap for mapView.
+     */
+    private func setGesturesForMapView()
+    {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(tap:)))
+        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+            singleTap.require(toFail: recognizer)
+        }
+        let longtap = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(sender:)));
+        for longrecognizer in mapView.gestureRecognizers! where longrecognizer is UILongPressGestureRecognizer{
+            longtap.require(toFail: longrecognizer);
+        }
+        
+        mapView.addGestureRecognizer(longtap);
+        mapView.addGestureRecognizer(singleTap)
+    }
+    
+    /**
+     Function takes coordinates to route user from where user specified to user destination.
+     */
+    private func routeUser(from:CLLocationCoordinate2D,to:CLLocationCoordinate2D)
+    {
+        let from = Waypoint(coordinate: CLLocationCoordinate2D(latitude: from.latitude, longitude: from.longitude), name: "Current Location")
+        let to = Waypoint(coordinate: CLLocationCoordinate2D(latitude: to.latitude, longitude: to.longitude));
+        MapUtilities.Route(from: from, to: to, mapView: mapView);
+    }
+   
+    
 //MARK: TAP GESTURE FUNCTIONS
 //========================================  TAP GESTURES FUNCTIONS  ================================
+    /**
+     Handles gesture for Single Tap.When user taps on a location, will get information from onemap API to display information of tapped location.
+     */
     func handleSingleTap(tap: UITapGestureRecognizer) {
-        //remove the previous selected annotation
+        //removes the previous selected annotation if have
         for ann in mapView.annotations!
         {
             if let tappedannotation = ann as? TappedLocationAnnotation
@@ -180,13 +195,12 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             }
         }
 
-        
+        //Get tapped location coordinate
         let tapCoordinate: CLLocationCoordinate2D = mapView.convert(tap.location(in: mapView), toCoordinateFrom: mapView);
-        // Add annotation:
-        let annotation = TappedLocationAnnotation();
-        annotation.coordinate = tapCoordinate;
+        let annotation = TappedLocationAnnotation(); //set annotation as a TappedLocationAnnotation Class
+        annotation.coordinate = tapCoordinate; //set coordinate
         
-        
+        //REVERSE GEOCODE
         LocationController.retrievePlace(lat: tapCoordinate.latitude,long:tapCoordinate.longitude){
             genres in
             print("Road: \(genres.locationAddress.roadName) ")
@@ -194,11 +208,13 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             annotation.subtitle = genres.locationAddress.blockNum //"Longtitude is : \(tapCoordinate.longitude)";
             
         }
-        //TODO: convert the longtitude and latitidue to the name of location - Done
         mapView.addAnnotation(annotation)
         
     }
     
+    /**
+     Handles gesture for Long Press.When long press will make tapped annotation disappear
+     */
     func longPressed(sender: UILongPressGestureRecognizer)
     {
         for ann in mapView.annotations!
@@ -216,14 +232,10 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 //===================================  MAPBOX DELEGATES  ================================
     
         //MARK: Annotation Callout
-    /** Implement the delegate method that allows annotations to show callouts when tapped.
+    /** 
+     Implement the delegate method that allows annotations to show callouts when tapped.
      */
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        // Always allow callouts to popup when annotations are tapped.
-        //mapView.selectedAnnotations
-        
-        
-        
         if(annotation.title == nil)
         {
             return false;
@@ -232,16 +244,13 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         {
             if(!heritageAnn.isNear)//if not near
             {
-                AppUtilities.showAlert(view: self, title: "\(annotation.title)", message: "Want to get rewards ? \n Come here at \(heritageAnn.Heritage!.name)");
-                return false;
+                //AppUtilities.showAlert(view: self, title: "\(annotation.title)", message: "Want to get rewards ? \n Come here at \(heritageAnn.Heritage!.name)");
+                return true;
             }
             else{
                 return true;}
             
         }
-       
-        
-        
         return true
     }
     
@@ -288,27 +297,24 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         if let selectedAnnotation = annotation as? HeritageAnnotation
         {
             let selectedCoordinate = selectedAnnotation.Heritage?.location;
+            let toCoordinate = CLLocationCoordinate2D(latitude: (selectedCoordinate?.latitude)!, longitude: (selectedCoordinate?.longtitude)!);
             
             //from should either be from current location or user specified.
             let currentLocationCoordinates = mapView.userLocation?.coordinate;
-            let from = Waypoint(coordinate: CLLocationCoordinate2D(latitude: currentLocationCoordinates!.latitude, longitude: currentLocationCoordinates!.longitude), name: "Current Location");
+            routeUser(from: currentLocationCoordinates!, to: toCoordinate);
             
-            let to = Waypoint(coordinate: CLLocationCoordinate2D(latitude: selectedCoordinate!.latitude, longitude: selectedCoordinate!.longtitude), name: selectedAnnotation.Heritage?.name);
-            
-            MapUtilities.Route(from: from, to: to, mapView: mapView);
         }
         else
         {
             let selectedAnnotation = annotation;
             let currentLocationCoordinates = mapView.userLocation?.coordinate;
+            routeUser(from: currentLocationCoordinates!, to: selectedAnnotation.coordinate)
             
-            let from = Waypoint(coordinate: CLLocationCoordinate2D(latitude: currentLocationCoordinates!.latitude, longitude: currentLocationCoordinates!.longitude), name: "Current Location")
-            let to = Waypoint(coordinate: CLLocationCoordinate2D(latitude: selectedAnnotation.coordinate.latitude, longitude: selectedAnnotation.coordinate.longitude));
             
-            MapUtilities.Route(from: from, to: to, mapView: mapView);
             
         }
         
+            //Clear previous routing Line
             for ann in mapView.annotations!
             {
                 if let routeLine = ann as? routePolyLine
@@ -321,31 +327,44 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
     }
     
+   
+    
     /**
      Delagate method to handle when surrounding callout is tapped.
      */
     func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
-//        // Optionally handle taps on the callout.
-//        //WHEN IMAGE OR THE CALLOUT IS TAPPED :
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let popupViewController = storyBoard.instantiateViewController(withIdentifier: "popup") as! PopUpViewController;
-       
-      //present method must be called before setting contents
-        self.present(popupViewController, animated: true, completion: nil)
         
-        
-        //GET HERITAGE INFORMATION FROM ANNOTATION
-        if let heritageAnnotation = annotation as? HeritageAnnotation
+        //CHECKS IF IS A HERITAGE ANNOATTION
+        if let heritageAnn = annotation as? HeritageAnnotation
         {
-            popupViewController.labelDisplay.text = heritageAnnotation.Heritage?.name;
-            popupViewController.selectedHeritage = heritageAnnotation.Heritage!;
-        }
-        else
-        {
-            popupViewController.labelDisplay.text = annotation.title!
+            if(!heritageAnn.isNear)//if user is not near the heritage , will display a popup
+            {
+                AppUtilities.showAlert(view: self, title: "\(annotation.title!)", message: "Want to get rewards ? \n Come here at \(heritageAnn.Heritage!.name)");
+         
+            }
+            else{ //else,if user is near , will display pop up
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let popupViewController = storyBoard.instantiateViewController(withIdentifier: "popup") as! PopUpViewController;
+                
+                //present method must be called before setting contents
+                self.present(popupViewController, animated: true, completion: nil)
+                
+                
+                //GET HERITAGE INFORMATION FROM ANNOTATION
+                if let heritageAnnotation = annotation as? HeritageAnnotation
+                {
+                    popupViewController.labelDisplay.text = heritageAnnotation.Heritage?.name;
+                    popupViewController.selectedHeritage = heritageAnnotation.Heritage!;
+                }
+                else
+                {
+                    popupViewController.labelDisplay.text = annotation.title!
+                }
+            }
+            
         }
         
-        // Hide the callout.
      //   mapView.deselectAnnotation(annotation, animated: true)
     }
     
@@ -379,9 +398,9 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
         if let point = annotation as? HeritageAnnotation {
-            var image = point.image! as? UIImage;
+            var image = point.image;
             image = AppUtilities.resizeImage(image: image!, targetSize:CGSize(width: 60, height: 100));
-            let reuseIdentifier = point.imageName as String;
+            let reuseIdentifier = point.imageName;
             if let annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: reuseIdentifier) {
                 // The annotatation image has already been cached, just reuse it.
                 return annotationImage
