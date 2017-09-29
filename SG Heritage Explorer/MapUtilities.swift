@@ -130,12 +130,14 @@ public class MapUtilities{
             
             try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
                 print("Entered in region! \(forRegion.identifier) ")
-                  AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
+                  //AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
                 displaySelectedAnnotation(mapView: mapView, annotationIdentifer: forRegion.identifier)
                 
             }, exit: { _ in
-                print("Exited from the region \(forRegion.identifier)")
-                AppUtilities.showAlert(view:onView,title: "Exitted", message: "Bye \(forRegion.identifier)")
+               // print("Exited from the region \(forRegion.identifier)")
+                //AppUtilities.showAlert(view:onView,title: "Exitted", message: "Bye \(forRegion.identifier)")
+                //set nearby false
+                disableNearBy(mapView: mapView, annotationIdentifer: forRegion.identifier)
                 
                 
             }, error: { req, error in
@@ -156,7 +158,31 @@ public class MapUtilities{
         {
             if annotation.title! == annotationIdentifer
             {
-                mapView.selectAnnotation(annotation, animated: true);
+                
+            let ann = annotation as! HeritageAnnotation;
+                ann.isNear = true;
+                mapView.selectAnnotation(ann, animated: true);
+                
+            }
+        }
+    }
+    
+    static func disableNearBy(mapView:MGLMapView,annotationIdentifer:String)
+    {
+        //print("display \(annotation.title)");
+        
+        for annotation in mapView.annotations!
+        {
+            if annotation.title! == annotationIdentifer
+            {
+                
+                if let ann = annotation as? HeritageAnnotation
+                {
+                    ann.isNear = false;
+                }
+                
+                //mapView.selectAnnotation(ann, animated: true);
+                
             }
         }
     }
