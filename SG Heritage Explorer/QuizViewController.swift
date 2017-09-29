@@ -53,6 +53,14 @@ class QuizViewController: UIViewController {
     }
     
    
+    @IBAction func BackBtn(_ sender: Any) {
+        
+        //Navigating to Picture Quiz
+       
+        
+        self.dismiss(animated: true, completion: nil);
+        
+    }
     
     //True button action click
     func truebuttonPressed(button: UIButton){
