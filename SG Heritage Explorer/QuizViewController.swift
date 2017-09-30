@@ -23,6 +23,9 @@ class QuizViewController: UIViewController {
     
     var SavedCorrectanswer = ""
     
+    var PictureQuestion = ""
+    
+        
     @IBOutlet weak var DescriptionBox: UIView!
     
     @IBOutlet weak var QuestionLabel: UILabel!
@@ -80,6 +83,7 @@ class QuizViewController: UIViewController {
         PicController.Quiz1Question = SavedQuestion
         PicController.Quiz1Useranswer = SavedUseranswer
         PicController.Quiz1Correctanswer = SavedCorrectanswer
+        PicController.PicQuizQuestion = PictureQuestion
         
 
     
@@ -102,6 +106,7 @@ class QuizViewController: UIViewController {
         PicController.Quiz1Question = SavedQuestion
         PicController.Quiz1Useranswer = SavedUseranswer
         PicController.Quiz1Correctanswer = SavedCorrectanswer
+        PicController.PicQuizQuestion = PictureQuestion
 
         
 
@@ -117,7 +122,7 @@ class QuizViewController: UIViewController {
             LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
             LocationDescription.text = "Merlion Park, is a Singapore landmark and major tourist attraction, located at One Fullerton, Singapore, near the Central Business District (CBD). The Merlion is a mythical creature with a lion's head and the body of a fish that is widely used as a mascot and national personification of Singapore. "
-            
+            PictureQuestion = "Post a selfie with the merlion"
             
             
             if (quiz1.CorrectAnswer == User){
@@ -140,6 +145,7 @@ class QuizViewController: UIViewController {
             LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
             LocationDescription.text = "The statue was the work of the famed British sculptor-cum-poet Thomas Woolner. The statue was unveiled by then Governor of the Straits Settlements Frederick Weld on 27 June 1887 on the occasion of Queen Victoria's Golden Jubilee. A little known detail was added by Woolner at the base of the statue. Here, he had traced a map depicting the area around the Straits of Malacca to symbolise Raffles having set foot on British Malaya."
+            PictureQuestion = "Post a selfie with raffle's statue"
             
             if (quiz1.CorrectAnswer == User){
                 print("Correct")
@@ -160,6 +166,7 @@ class QuizViewController: UIViewController {
             LocationTitle.text = passedTitle
             QuestionLabel.text = quiz1.Questions
             LocationDescription.text = "The Singapore Botanic Gardens is a 158-year-old tropical garden located at the fringe of Singapore's Orchard Road shopping district. It is one of three gardens, and the only tropical garden, to be honoured as a UNESCO World Heritage Site. The Botanic Gardens has been ranked Asia's top park attraction since 2013, by TripAdvisor Travellers' Choice Awards."
+            PictureQuestion = "Post a selfie in botanic garden"
             
             if (quiz1.CorrectAnswer == User){
                 print("Correct")
