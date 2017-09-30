@@ -17,8 +17,8 @@ class RewardsViewController: UIViewController {
     
     //Create UICirluar view 
     //Make it Global
-    let progressRing = UICircularProgressRingView(frame: CGRect(x: 50, y: 250, width: 120, height: 120))
-    let progressRing1 = UICircularProgressRingView(frame: CGRect(x: 210, y: 250, width: 120, height: 120))
+    let progressRing = UICircularProgressRingView(frame: CGRect(x: 100, y: 230, width: 180, height: 180))
+//    let progressRing1 = UICircularProgressRingView(frame: CGRect(x: 210, y: 250, width: 120, height: 120))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +35,11 @@ class RewardsViewController: UIViewController {
         progressRing.innerRingColor = UIColor(red: 192.0 / 255.0, green: 38.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0)
         self.view.addSubview(progressRing)
         
-        progressRing1.maxValue = 100
-        progressRing1.value = 70
-        progressRing1.outerRingColor = UIColor.blue
-        progressRing1.innerRingColor = UIColor.white
-        self.view.addSubview(progressRing1)
+//        progressRing1.maxValue = 100
+//        progressRing1.value = 70
+//        progressRing1.outerRingColor = UIColor.blue
+//        progressRing1.innerRingColor = UIColor.white
+//        self.view.addSubview(progressRing1)
 
        
         animation()
