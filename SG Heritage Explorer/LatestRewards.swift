@@ -82,6 +82,8 @@ import UIKit
             //let bundle = Bundle(for: type(of: self))
             //let RewardsImage = UIImage(named: "3D Circle" , in: bundle, compatibleWith: self.traitCollection)
             
+            Rewards.setImage( UIImage(named:"Circle"), for: .normal)
+            
             //Add Contraints
             Rewards.translatesAutoresizingMaskIntoConstraints = false
             Rewards.heightAnchor.constraint(equalToConstant: rewardsSize.height).isActive = true

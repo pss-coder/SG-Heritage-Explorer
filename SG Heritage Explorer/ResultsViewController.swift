@@ -14,6 +14,10 @@ class ResultsViewController: UIViewController {
     public var Quiz1Question:String = "";
     public var Quiz1Useranswer:String = "";
     public var Quiz1Correctanswer:String = "";
+    public var PicQuizQuestion:String = "";
+    public var Quiz1Points:Int = 0
+    public var Quiz2Points:Int = 0
+    public var totalquizpoints:Int = 40
 
     @IBOutlet weak var PointsView: UIView!
     @IBOutlet weak var Quiz1View: UIView!
@@ -21,11 +25,15 @@ class ResultsViewController: UIViewController {
 
     @IBOutlet weak var quiz1question: UILabel!
     @IBOutlet weak var quiz1ans: UILabel!
+    @IBOutlet weak var PictureQuizQuestion: UILabel!
+    
+    @IBOutlet weak var quiz1Image: UIImageView!
+    @IBOutlet weak var PointsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+     
         
         PointsView.layer.cornerRadius = 10
         PointsView.layer.borderWidth = 1
@@ -40,14 +48,46 @@ class ResultsViewController: UIViewController {
         Quiz2View.layer.borderWidth = 1
         Quiz2View.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
-        
-        
+    
         
         
     }
     
+    func Results() {
+    quiz1question.text = self.Quiz1Question
+    print(self.Quiz1Question)
+    if(self.Quiz1Useranswer == self.Quiz1Correctanswer){
+    quiz1ans.text = self.Quiz1Useranswer
+    //quiz1ans.textColor = UIColor.green
+    quiz1Image.image = UIImage(named:"tick-inside-a-circle")
+    PictureQuizQuestion.text = PicQuizQuestion
+        
+   //Calculating points
+    Quiz1Points = 20
+    Quiz2Points = 20
+    PointsLabel.text = " \(Quiz1Points + Quiz2Points) / \(totalquizpoints)"
+    
+        
+    
+    
+    }else {
+    quiz1ans.text = self.Quiz1Useranswer
+    //quiz1ans.textColor = UIColor.red
+    quiz1Image.image = UIImage(named:"cancel-symbol-inside-a-circle")
+    PictureQuizQuestion.text = PicQuizQuestion
+    //Calculating points
+    Quiz1Points = 0
+    Quiz2Points = 20
+    PointsLabel.text = " \(Quiz1Points + Quiz2Points) / \(totalquizpoints)"
+
+    }
+
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
+        Results()
+        
         print("The Bloody Results")
         print(self.Quiz1Question + self.Quiz1Useranswer + self.Quiz1Correctanswer)
     }
