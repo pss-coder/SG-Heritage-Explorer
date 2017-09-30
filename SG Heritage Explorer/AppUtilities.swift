@@ -24,6 +24,8 @@ public class AppUtilities
         UIApplication.shared.presentLocalNotificationNow(notification)
     }
     
+    
+    
     static func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         

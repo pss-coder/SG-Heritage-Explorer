@@ -14,11 +14,11 @@ import SwiftLocation;
 
 public class MapUtilities{
 
-    static var isRouteSet = 0;
+   
 
     /**
      
-     Method maps out a Circle using the coordinate and uses the radius as the distance from the coordinate.
+     Function maps out a Circle using the coordinate and uses the radius as the distance from the coordinate.
      
      - Returns: MGLPolygon
      */
@@ -48,7 +48,9 @@ public class MapUtilities{
         
     }
     
-    
+    /**
+     Function takes in waypoint of from and to destination and displays the route onto the mapview.
+     */
     static func Route(from:Waypoint,to:Waypoint,mapView:MGLMapView)    {
         //          let waypoints = [
         //         Waypoint(coordinate: CLLocationCoordinate2D(latitude: 1.286789, longitude: 103.854501), name: "Merlion Park"),
@@ -92,13 +94,9 @@ public class MapUtilities{
                      routeCoordinates = route.coordinates!
                      routeLine = routePolyLine(coordinates: &routeCoordinates, count: route.coordinateCount)
                 
-                    routeLine.isRouteSet = 1;
-                    
-                    
-                   // return routeCoordinates;
+                    // return routeCoordinates;
                     
                     // Add the polyline to the map and fit the viewport to the polyline.
-                    isRouteSet = 1;
                     mapView.addAnnotation(routeLine)
                     mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
                    
@@ -117,6 +115,9 @@ public class MapUtilities{
     }//end route method
     
     
+    /**
+     Function takes in region and set geofence for specified mapview
+     */
     static func CreateGeoFence(forRegion:CLCircularRegion,onView:UIViewController,mapView:MGLMapView)
     {
         //let geofenceRegionCenter = CLLocationCoordinate2DMake(1.286789, 103.854501);
@@ -125,21 +126,15 @@ public class MapUtilities{
         print("geofence start for \(forRegion.identifier)");
         
         do {
-            //let loc = CLLocationCoordinate2DMake( 42.972474, 13.757332)
-            //let radius = 100.0
-            
+
             try SwiftLocation.Location.monitor(region: forRegion, enter: { _ in
                 print("Entered in region! \(forRegion.identifier) ")
-                  //AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
+                AppUtilities.showAlert(view:onView,title: "Entered", message: "Welcome \(forRegion.identifier)")
                 displaySelectedAnnotation(mapView: mapView, annotationIdentifer: forRegion.identifier)
                 
             }, exit: { _ in
-               // print("Exited from the region \(forRegion.identifier)")
-                //AppUtilities.showAlert(view:onView,title: "Exitted", message: "Bye \(forRegion.identifier)")
                 //set nearby false
                 disableNearBy(mapView: mapView, annotationIdentifer: forRegion.identifier)
-                
-                
             }, error: { req, error in
                 print("An error has occurred \(error)")
                 req.cancel() // abort the request (you can also use `cancelOnError=true` to perform it automatically
@@ -150,9 +145,11 @@ public class MapUtilities{
         
     }
     
+    /**
+     Function displays heritage Annotation and displays it,ensuring that only that annotation can have the pop up
+     */
     static func displaySelectedAnnotation(mapView:MGLMapView,annotationIdentifer:String)
     {
-        //print("display \(annotation.title)");
         
         for annotation in mapView.annotations!
         {
@@ -167,10 +164,11 @@ public class MapUtilities{
         }
     }
     
+    /**
+     Function sets the properties for the heritage annotation to false, to prevent annotation to have pop up
+     */
     static func disableNearBy(mapView:MGLMapView,annotationIdentifer:String)
     {
-        //print("display \(annotation.title)");
-        
         for annotation in mapView.annotations!
         {
             if annotation.title! == annotationIdentifer
@@ -180,14 +178,12 @@ public class MapUtilities{
                 {
                     ann.isNear = false;
                 }
-                
-                //mapView.selectAnnotation(ann, animated: true);
-                
             }
         }
     }
 
 }
+
 
 public class routePolyLine : MGLPolyline
 {
