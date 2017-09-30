@@ -32,6 +32,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //Hide the menu 
         menu.isHidden = true
         

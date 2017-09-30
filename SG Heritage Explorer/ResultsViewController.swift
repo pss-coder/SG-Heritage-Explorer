@@ -30,6 +30,23 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var quiz1Image: UIImageView!
     @IBOutlet weak var PointsLabel: UILabel!
     
+    @IBAction func BackBtn(_ sender: Any) {
+//           self.dismiss(animated: true, completion: nil);
+        //navigationController?.popToRootViewController(animated: true);
+  //      navigationController?.popToViewController(View, animated: <#T##Bool#>)
+       // navigationController?.popViewController(animated: true);
+        print("fafaga");
+//     _ =   self.navigationController?.popToRootViewController(animated: true)
+//        
+       // let Storyboard: UIStoryboard  = UIStoryboard(name: "Main", bundle: nil)
+      //  let vc = Storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+       // vc.navigationController?.setNavigationBarHidden(true, animated: false);
+      //  self.present(vc, animated: true, completion: nil);
+        self.presentingViewController?.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
