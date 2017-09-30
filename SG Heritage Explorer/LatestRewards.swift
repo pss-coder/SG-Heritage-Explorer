@@ -70,7 +70,7 @@ import UIKit
 
        
         
-        for _ in 0..<3{
+        for i in 0..<3{
             
             //Create UI Button
             let Rewards = UIButton()
@@ -82,8 +82,16 @@ import UIKit
             //let bundle = Bundle(for: type(of: self))
             //let RewardsImage = UIImage(named: "3D Circle" , in: bundle, compatibleWith: self.traitCollection)
             
-            Rewards.setImage( UIImage(named:"Circle"), for: .normal)
-            
+            if(i == 0){
+            Rewards.setImage( UIImage(named:"LatestRewards1"), for: .normal)
+            }
+            else if (i == 1){
+                Rewards.setImage( UIImage(named:"LatestRewards3"), for: .normal)
+            }
+            else if (i == 2){
+                
+                Rewards.setImage( UIImage(named:"LatestRewards4"), for: .normal)
+            }
             //Add Contraints
             Rewards.translatesAutoresizingMaskIntoConstraints = false
             Rewards.heightAnchor.constraint(equalToConstant: rewardsSize.height).isActive = true
