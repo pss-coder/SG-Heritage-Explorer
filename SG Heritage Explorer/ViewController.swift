@@ -27,7 +27,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
     private let oneMapBaseMapURL = "https://maps-json.onemap.sg/Default.json";
     @IBOutlet weak var mapView: MGLMapView!
     
-    let locationManager = CLLocationManager();
+   // let locationManager = CLLocationManager();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,8 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         DisplayOneMapBaseMap();
         mapView.delegate = self;
        
-        locationManager.distanceFilter = kCLDistanceFilterNone;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+       // locationManager.distanceFilter = kCLDistanceFilterNone;
+        //locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
 
         setGesturesForMapView();
@@ -95,15 +95,16 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 
         
         //pointB.coordinate = CLLocationCoordinate2D(latitude: 1.394273, longitude: 103.902965)
-       // let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
+      //  let PawanHome = Heritage(name: "PawanHome", description: "Pawan Roar",location: Location(latitude: 1.394273, longtitude: 103.902965,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
         
         let SGBotanicGardens = Heritage(name: "Singapore Botanic Gardens", description: "Alot of flowers",image : (UIImage(named: "singaporebotanicgarden"))! ,location: Location(latitude: 1.313840, longtitude: 103.815914,address: Location.Address(name: "", blockNum: "", roadName: "", building: "")));
         let RafflesStatute = Heritage(name: "Raffles Statue", description: "White",image : (UIImage(named: "sirRaffles"))! ,location: Location(latitude: 1.287722, longtitude: 103.850755,address:Location.Address(name: "", blockNum: "", roadName: "", building: "")));
-        
+       
+         Heritages.append(SGBotanicGardens);
         Heritages.append(merlionPark);
-        Heritages.append(SGBotanicGardens);
         Heritages.append(RafflesStatute);
-     //   Heritages.append(PawanHome);
+        
+       // Heritages.append(PawanHome);
         
         return Heritages;
     }

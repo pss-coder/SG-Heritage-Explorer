@@ -14,7 +14,7 @@ import SwiftLocation;
 
 public class MapUtilities{
 
-   
+    static var isRouteSet = 0;
 
     /**
      
@@ -94,9 +94,13 @@ public class MapUtilities{
                      routeCoordinates = route.coordinates!
                      routeLine = routePolyLine(coordinates: &routeCoordinates, count: route.coordinateCount)
                 
-                    // return routeCoordinates;
+                    routeLine.isRouteSet = 1;
+                    
+                    
+                   // return routeCoordinates;
                     
                     // Add the polyline to the map and fit the viewport to the polyline.
+                    isRouteSet = 1;
                     mapView.addAnnotation(routeLine)
                     mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: .zero, animated: true)
                    
@@ -146,7 +150,8 @@ public class MapUtilities{
     }
     
     /**
-     Function displays heritage Annotation and displays it,ensuring that only that annotation can have the pop up
+     Function displays heritage Annotation and displays it
+     
      */
     static func displaySelectedAnnotation(mapView:MGLMapView,annotationIdentifer:String)
     {
@@ -165,7 +170,7 @@ public class MapUtilities{
     }
     
     /**
-     Function sets the properties for the heritage annotation to false, to prevent annotation to have pop up
+     Fucntions sets the property (isNear) for the heritage Annotation to prevent callout from displaying 
      */
     static func disableNearBy(mapView:MGLMapView,annotationIdentifer:String)
     {

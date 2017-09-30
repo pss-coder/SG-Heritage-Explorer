@@ -29,8 +29,8 @@ class RewardsViewController: UIViewController {
        
         
         // Change any of the properties
-        progressRing.maxValue = 100
-        progressRing.value = 70
+        progressRing.maxValue = 100;
+        progressRing.value = 5
         progressRing.outerRingColor = UIColor.black
         progressRing.innerRingColor = UIColor(red: 192.0 / 255.0, green: 38.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0)
         self.view.addSubview(progressRing)
