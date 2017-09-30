@@ -23,8 +23,7 @@ public class LocationController {
         print(url.absoluteURL);
 
     
-    let task = URLSession.shared.dataTask(with: url) { (data,
-    response, error) in
+    let task = URLSession.shared.dataTask(with: url){ (data,response, error) in
     
     if error != nil {
     print(error!)
@@ -34,61 +33,33 @@ public class LocationController {
     //  self.places = [Place]()
     
     //codes to get specific value from the JSON
-    do {
+    do
+    {
     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
     
-    if let articlesFromJson = json["GeocodeInfo"] as? [[String : AnyObject]] {
+        if let articlesFromJson = json["GeocodeInfo"] as? [[String : AnyObject]]
+        {
     // The entire JSON
      print("hello \(articlesFromJson)")
-        
-        
-       
-            let loc:Location;
-            
-            
-            if let RoadName = articlesFromJson[0]["ROAD"] as? String, let BlockNum = articlesFromJson[0]["BLOCK"] as? String, let Building = articlesFromJson[0]["BUILDINGNAME"] as? String, let lat =  articlesFromJson[0]["LATITUDE"] as? String, let long =  articlesFromJson[0]["LONGTITUDE"] as? String {
+    let loc:Location;
+    if let RoadName = articlesFromJson[0]["ROAD"] as? String, let BlockNum = articlesFromJson[0]["BLOCK"] as? String, let Building = articlesFromJson[0]["BUILDINGNAME"] as? String, let lat =  articlesFromJson[0]["LATITUDE"] as? String, let long =  articlesFromJson[0]["LONGTITUDE"] as? String {
                 // To select the specific value
                 
                 let latDouble = Double(lat);
                 let longDouble = Double(long);
                 
-                
+
                 loc = Location(latitude: latDouble! , longtitude: longDouble!, address:Location.Address(name: "", blockNum: BlockNum, roadName: RoadName, building: Building));    // push the selected value into the array
                 locationplace.append(loc);
                 completionHandler(loc)
                 
-                
-                
             }
-            
+        }
     
-        
-    
-//    for articleFromJson in articlesFromJson {
-//    let loc:Location;
-//    
-//    
-//        if let RoadName = articleFromJson["ROAD"] as? String, let BlockNum = articleFromJson["BLOCK"] as? String, let Building = articleFromJson["BUILDINGNAME"] as? String, let lat =  articleFromJson["LATITUDE"] as? String, let long =  articleFromJson["LONGTITUDE"] as? String {
-//            // To select the specific value
-//            
-//            let latDouble = Double(lat);
-//            let longDouble = Double(long);
-//            
-//            
-//            loc = Location(latitude: latDouble! , longtitude: longDouble!, address:Location.Address(name: "", blockNum: BlockNum, roadName: RoadName, building: Building));    // push the selected value into the array
-//            locationplace.append(loc);
-//    completionHandler(loc)
-//    
-//    
-//    
-//    }
-//    
-//    }
     }
-       
-    
-    } catch let error {
-    print(error)
+    catch let error
+    {
+        print(error)
     }
     
     
@@ -155,13 +126,6 @@ public class LocationController {
                             print("===================");
                             print(loc.locationAddress.building);
                             print("===================");
-                            //place.locationplace = places    // same name as the name in the class
-                            //place.lat = lat
-                            //place.long = long
-                            //print(places)
-                            
-                            
-                            
                         }
                        // return locations;
                         //self.places?.append(place)  //pushing all the specific value from the JSON to an array

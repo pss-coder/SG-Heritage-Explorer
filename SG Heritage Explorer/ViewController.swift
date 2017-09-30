@@ -43,7 +43,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         
 
         setGesturesForMapView();
-        
         setAnnotationsFor(Heritages: LoadHeritages())
         setGeoFencingFor(Heritages: LoadHeritages())
        
@@ -78,7 +77,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         mapView.showsUserLocation = true;
         mapView.setUserTrackingMode(.followWithHeading, animated: true)
         
-        let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
+       let merlionParkLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(1.2867888749929002, 103.8545510172844);
        mapView.setCenter(merlionParkLocation,zoomLevel: 12, animated: false);
         
     }
@@ -124,7 +123,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             annotation.imageName = heritage.name;
             annotation.isNear = false;
             annotation.image = heritage.image;
-            
             heritageAnnotations.append(annotation);
             
         }
@@ -309,9 +307,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
             let selectedAnnotation = annotation;
             let currentLocationCoordinates = mapView.userLocation?.coordinate;
             routeUser(from: currentLocationCoordinates!, to: selectedAnnotation.coordinate)
-            
-            
-            
         }
         
             //Clear previous routing Line
@@ -339,7 +334,7 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         {
             if(!heritageAnn.isNear)//if user is not near the heritage , will display a popup
             {
-                AppUtilities.showAlert(view: self, title: "\(annotation.title!)", message: "Want to get rewards ? \n Come here at \(heritageAnn.Heritage!.name)");
+                AppUtilities.showAlert(view: self, title: "\(annotation.title!!)", message: "Want to get rewards ? \n Come here at \(heritageAnn.Heritage!.name)");
          
             }
             else{ //else,if user is near , will display pop up
@@ -371,9 +366,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
 //  ====================================   ANNOTATION STYLE LOOK ==============================
     //MARK: Annotation Style
     
-    
-    
-    
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
         return 0.5
     }
@@ -393,7 +385,6 @@ class ViewController: UIViewController,MGLMapViewDelegate {
         // Set the line width for polyline annotations
         return 2.0
     }
-    
     
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
