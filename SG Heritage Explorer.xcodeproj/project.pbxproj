@@ -10,11 +10,11 @@
 		112D7CAF1F7B77D200FB5E00 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CAE1F7B77D200FB5E00 /* Place.swift */; };
 		112D7CB11F7B7C5800FB5E00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */; };
 		112D7CB31F7B7FB900FB5E00 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */; };
+		11AC1FA61F7F7DCA00C96BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AC1FA51F7F7DCA00C96BFB /* Assets.xcassets */; };
 		1D0FC2861F7D647300815EB9 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FC2851F7D647300815EB9 /* defaultPhoto.png */; };
 		1D2CED8C1F7CBA170084623C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2CED8B1F7CBA170084623C /* ResultsViewController.swift */; };
 		1D2E6B561F7BB849009ECD2C /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E6B551F7BB849009ECD2C /* LocationController.swift */; };
 		1D2E6B581F7BCD55009ECD2C /* QuizControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E6B571F7BCD55009ECD2C /* QuizControl.swift */; };
-		1D4D63691F7D6DEA005AE98D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D63681F7D6DEA005AE98D /* Assets.xcassets */; };
 		1D4D63711F7D73B0005AE98D /* UserIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D63701F7D73B0005AE98D /* UserIcon.png */; };
 		1D513DF01F7C1A0400538D65 /* PictureQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D513DEF1F7C1A0400538D65 /* PictureQuizViewController.swift */; };
 		1DA66BD71F7BA48100D9C385 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */; };
@@ -53,11 +53,11 @@
 		112D7CAE1F7B77D200FB5E00 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		112D7CB01F7B7C5800FB5E00 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		112D7CB21F7B7FB900FB5E00 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		11AC1FA51F7F7DCA00C96BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D0FC2851F7D647300815EB9 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
 		1D2CED8B1F7CBA170084623C /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		1D2E6B551F7BB849009ECD2C /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		1D2E6B571F7BCD55009ECD2C /* QuizControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizControl.swift; sourceTree = "<group>"; };
-		1D4D63681F7D6DEA005AE98D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D4D63701F7D73B0005AE98D /* UserIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserIcon.png; sourceTree = "<group>"; };
 		1D513DEF1F7C1A0400538D65 /* PictureQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureQuizViewController.swift; sourceTree = "<group>"; };
 		1DA66BD61F7BA48100D9C385 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				25B569D01F7B6C1A001C760F /* Images */,
 				251E33F91F77FE4C0011B98B /* Info.plist */,
 				251E33ED1F77FE4C0011B98B /* AppDelegate.swift */,
-				1D4D63681F7D6DEA005AE98D /* Assets.xcassets */,
+				11AC1FA51F7F7DCA00C96BFB /* Assets.xcassets */,
 			);
 			path = "SG Heritage Explorer";
 			sourceTree = "<group>";
@@ -353,9 +353,9 @@
 			files = (
 				1D4D63711F7D73B0005AE98D /* UserIcon.png in Resources */,
 				1D0FC2861F7D647300815EB9 /* defaultPhoto.png in Resources */,
-				1D4D63691F7D6DEA005AE98D /* Assets.xcassets in Resources */,
 				251E33F81F77FE4C0011B98B /* LaunchScreen.storyboard in Resources */,
 				253268C71F78C8F400F0FBBB /* test.gpx in Resources */,
+				11AC1FA61F7F7DCA00C96BFB /* Assets.xcassets in Resources */,
 				251E33F31F77FE4C0011B98B /* Main.storyboard in Resources */,
 				253268C81F78C8F400F0FBBB /* TestLocations 14-01-07-612.gpx in Resources */,
 			);

@@ -76,7 +76,7 @@ class ResultsViewController: UIViewController {
     if(self.Quiz1Useranswer == self.Quiz1Correctanswer){
     quiz1ans.text = self.Quiz1Useranswer
     //quiz1ans.textColor = UIColor.green
-    quiz1Image.image = UIImage(named:"tick-inside-a-circle")
+    quiz1Image.image = UIImage(named:"tick")
     PictureQuizQuestion.text = PicQuizQuestion
         
    //Calculating points
@@ -90,7 +90,7 @@ class ResultsViewController: UIViewController {
     }else {
     quiz1ans.text = self.Quiz1Useranswer
     //quiz1ans.textColor = UIColor.red
-    quiz1Image.image = UIImage(named:"cancel-symbol-inside-a-circle")
+    quiz1Image.image = UIImage(named:"cross-1")
     PictureQuizQuestion.text = PicQuizQuestion
     //Calculating points
     Quiz1Points = 0
