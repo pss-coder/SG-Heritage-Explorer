@@ -19,18 +19,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchPlaces();
+     //   fetchPlaces();
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-//        fetchPlaces()
+   //     fetchPlaces()
     }
     
     @IBAction func pressedsearched(_ sender: Any) {
-//        fetchPlaces()
+        fetchPlaces()
     }
     
     
@@ -46,10 +46,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let task = URLSession.shared.dataTask(with: url) { (data,
             response, error) in
             
-//            if let data = data,
-//                let json = try? JSONSerialization.jsonObject(with: data) {
-//                print(json)
-//            }
         
             
             

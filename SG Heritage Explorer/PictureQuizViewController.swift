@@ -17,7 +17,9 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
     public var Quiz1Question:String = "";
     public var Quiz1Useranswer:String = "";
     public var Quiz1Correctanswer:String = "";
+    public var PicQuizQuestion:String = ""
     
+    @IBOutlet weak var PictureQuestion: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,7 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
         photoButton.layer.cornerRadius = 5
         photoButton.layer.borderWidth = 1
         photoButton.layer.borderColor = UIColor.white.cgColor
-    
-       
+        
 
         // Do any additional setup after loading the view.
     }
@@ -35,6 +36,12 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Setting the Picture Question
+        PictureQuestion.text = PicQuizQuestion
+        
     }
     
 
@@ -141,6 +148,7 @@ class PictureQuizViewController: UIViewController, UITextFieldDelegate, UIImageP
             ResultsViewController.Quiz1Question =  self.Quiz1Question
             ResultsViewController.Quiz1Useranswer =  self.Quiz1Useranswer
             ResultsViewController.Quiz1Correctanswer = self.Quiz1Correctanswer
+            ResultsViewController.PicQuizQuestion = self.PicQuizQuestion
             
         }))
         
