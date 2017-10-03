@@ -21,6 +21,8 @@ public class MapUtilities{
      Function maps out a Circle using the coordinate and uses the radius as the distance from the coordinate.
      
      - Returns: MGLPolygon
+     
+     
      */
     static func DrawPolygonCircleForCoordinate(coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon {
         let degreesBetweenPoints = 8.0
